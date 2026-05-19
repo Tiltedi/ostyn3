@@ -35,13 +35,13 @@ const productNav = [
 ];
 
 const OstynLogo = ({ className }: { className?: string }) => (
-    <img src="/logo-ostyn.png" alt="Ostyn" className={cx("h-9 w-auto md:h-10", className)} />
+    <img src="/logo-ostyn.png" alt="Ostyn" className={cx("h-11 w-auto md:h-14", className)} />
 );
 
 const OstynHeader = () => {
     return (
         <header className="sticky top-0 z-50 w-full border-b border-black/10 bg-white">
-            <div className="mx-auto flex h-7 max-w-container items-end justify-end gap-6 px-4 pb-1 md:px-8">
+            <div className="mx-auto flex h-6 max-w-container items-end justify-end gap-6 px-4 md:px-8">
                 <a
                     href="#"
                     className="flex items-center gap-1.5 text-xs text-black/60 outline-focus-ring transition hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2"
@@ -58,7 +58,7 @@ const OstynHeader = () => {
                 </button>
             </div>
 
-            <div className="mx-auto flex h-14 max-w-container items-center justify-between gap-6 px-4 md:h-16 md:px-8">
+            <div className="mx-auto flex h-16 max-w-container items-end justify-between gap-6 px-4 pb-2 md:h-20 md:px-8 md:pb-3">
                 <a href="#" aria-label="Ostyn — startpagina" className="flex items-center">
                     <OstynLogo />
                 </a>
@@ -104,53 +104,88 @@ const OstynHeader = () => {
 
 const HeroSection = () => {
     return (
-        <section
-            className="relative isolate flex min-h-[calc(100svh-5.25rem)] flex-col justify-end overflow-hidden md:min-h-[calc(100svh-5.75rem)]"
-            aria-labelledby="hero-titel"
-        >
-            <img
-                src="/hero.jpg"
-                alt=""
-                aria-hidden="true"
-                className="absolute inset-0 -z-10 size-full object-cover"
-            />
-            <div
-                aria-hidden="true"
-                className="absolute inset-0 -z-10 bg-gradient-to-t from-black/85 via-black/45 to-black/10"
-            />
+        <section className="px-3 pb-3 md:px-4 md:pb-4" aria-labelledby="hero-titel">
+            <div className="relative isolate flex min-h-[calc(100svh-5.5rem-0.75rem)] flex-col justify-end overflow-hidden rounded-3xl md:min-h-[calc(100svh-6.5rem-1rem)]">
+                <img
+                    src="/hero.jpg"
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 -z-10 size-full object-cover"
+                />
+                <div
+                    aria-hidden="true"
+                    className="absolute inset-0 -z-10 bg-gradient-to-t from-black/55 via-black/15 to-transparent"
+                />
 
-            <div className="mx-auto w-full max-w-container px-4 pt-32 pb-16 md:px-8 md:pt-40 md:pb-24">
-                <div className="max-w-3xl">
-                    <p className="text-sm font-semibold tracking-[0.18em] text-[#C19848] uppercase md:text-md">
-                        expand your freedom
-                    </p>
-                    <h1
-                        id="hero-titel"
-                        className="mt-4 text-display-md font-medium text-balance text-white md:text-display-lg lg:text-display-xl"
-                    >
-                        Een <strong className="font-extrabold">poolhouse op maat</strong>, in <strong className="font-extrabold">eigen atelier</strong> gebouwd. Klaar binnen{" "}
-                        <strong className="font-extrabold">3 tot 6 maanden</strong>.
-                    </h1>
-                    <p className="mt-5 max-w-2xl text-lg text-white/85 md:mt-6">
-                        Eén team van ontwerp tot oplevering. Eén afspraak over de prijs. Eén partner die ook na de plaatsing voor u klaarstaat.
-                    </p>
-                    <div className="mt-8 flex flex-col-reverse items-stretch gap-3 sm:flex-row sm:items-start md:mt-10">
-                        <Button href="#offerte" iconTrailing={ArrowRight} size="xl">
-                            Vraag uw gratis offerte aan
-                        </Button>
+                <div className="grid grid-cols-1 gap-3 p-3 md:grid-cols-[3fr_2fr] md:gap-4 md:p-5 lg:p-6">
+                    <div className="flex flex-col justify-between gap-8 rounded-3xl bg-black/85 p-6 backdrop-blur-md md:p-8 lg:p-10">
+                        <div>
+                            <p className="text-sm font-semibold tracking-[0.18em] text-[#C19848] uppercase md:text-md">
+                                expand your freedom
+                            </p>
+                            <h1
+                                id="hero-titel"
+                                className="mt-3 text-display-sm font-medium text-balance text-white md:text-display-md lg:text-display-lg"
+                            >
+                                Een <strong className="font-extrabold">poolhouse op maat</strong>. In{" "}
+                                <strong className="font-extrabold">eigen atelier</strong> gebouwd, klaar in{" "}
+                                <strong className="font-extrabold">3 tot 6 maanden</strong>.
+                            </h1>
+                        </div>
+
+                        <div className="flex flex-wrap items-center gap-4">
+                            <a
+                                href="#realisaties"
+                                aria-label="Bekijk onze realisaties"
+                                className="group flex shrink-0 gap-2 outline-focus-ring focus-visible:outline-2 focus-visible:outline-offset-4"
+                            >
+                                <img
+                                    src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=400&fit=crop&q=80"
+                                    alt=""
+                                    aria-hidden="true"
+                                    className="size-14 shrink-0 rounded-2xl object-cover ring-1 ring-white/15 transition group-hover:scale-[1.03] md:size-16"
+                                />
+                                <img
+                                    src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?w=400&h=400&fit=crop&q=80"
+                                    alt=""
+                                    aria-hidden="true"
+                                    className="size-14 shrink-0 rounded-2xl object-cover ring-1 ring-white/15 transition group-hover:scale-[1.03] md:size-16"
+                                />
+                            </a>
+                            <Button
+                                href="#realisaties"
+                                size="lg"
+                                iconTrailing={ArrowUpRight}
+                                className="!bg-white !text-black hover:!bg-white/90"
+                            >
+                                Onze realisaties
+                            </Button>
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col gap-5 rounded-3xl bg-black/55 p-6 backdrop-blur-md md:p-8">
+                        <div className="flex gap-2">
+                            <div className="flex-1 rounded-2xl bg-white/10 px-5 py-4">
+                                <p className="text-display-xs font-extrabold text-white md:text-display-sm">33+</p>
+                                <p className="mt-1 text-xs text-white/70 md:text-sm">jaar familiebedrijf</p>
+                            </div>
+                            <div className="flex-1 rounded-2xl bg-white/10 px-5 py-4">
+                                <p className="text-display-xs font-extrabold text-white md:text-display-sm">3.000 m²</p>
+                                <p className="mt-1 text-xs text-white/70 md:text-sm">eigen showroom</p>
+                            </div>
+                        </div>
+                        <p className="text-md text-white/85 md:text-lg">
+                            Eén team van ontwerp tot oplevering. Eén afspraak over de prijs. Eén partner die er ook na de plaatsing nog is.
+                        </p>
                         <Button
-                            href="#inspiratieboek"
-                            color="link-gray"
-                            size="xl"
-                            iconTrailing={ArrowUpRight}
-                            className="!text-white hover:!text-white/80"
+                            href="#offerte"
+                            size="lg"
+                            iconTrailing={ArrowRight}
+                            className="self-start"
                         >
-                            Download het inspiratieboek
+                            Vraag uw offerte
                         </Button>
                     </div>
-                    <p className="mt-6 text-sm text-white/65 md:text-md">
-                        Vrijblijvend · Antwoord binnen 2 werkdagen
-                    </p>
                 </div>
             </div>
         </section>

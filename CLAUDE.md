@@ -50,9 +50,12 @@ Marketing landing page for **Ostyn**, a Belgian premium poolhouse company
    maps to brand-600. Don't pass `color` to primary CTAs.
 
 5. **CTA sizes are LOCKED:**
-   - `size="xl"` — hero, offerte, showroom, realisaties, nazorg
-   - `size="lg"` — doorlooptijd callout
+   - `size="xl"` — offerte, showroom, realisaties, nazorg
+   - `size="lg"` — hero cards, doorlooptijd callout
    - `size="sm"` — header
+
+   The hero uses `lg` (not `xl`) because the CTAs sit inside floating
+   cards over the rounded photo — `xl` overpowers the card.
 
 ## Typography weight ladder (already shifted down once — don't bump back up)
 
@@ -91,9 +94,16 @@ Marketing landing page for **Ostyn**, a Belgian premium poolhouse company
 
 ## Current page sections (top to bottom)
 
-1. `OstynHeader` — sticky, white, logo + 4 nav links + Offerte CTA
-2. `HeroSection` — cinematic full-bleed photo (`min-h-[calc(100svh-Xrem)]`),
-   dark bottom-up gradient, gold eyebrow, white headline, anchored bottom-left
+1. `OstynHeader` — sticky white, two rows. Utility row (h-6, 60% black
+   text, klantenportaal + nl) sits tight above the main row (h-16/20,
+   logo + 7 product nav links + gold "afspraak maken" + hamburger).
+   Logo and main-row nav are bottom-aligned via `items-end`.
+2. `HeroSection` — rounded full-bleed photo inset by `p-3/p-4`, with
+   two floating cards layered on the bottom via `backdrop-blur-md`:
+   left card (bg-black/85, ~3fr) carries the gold eyebrow + display
+   headline + project thumbnails + "Onze realisaties" pill; right
+   card (bg-black/55, ~2fr) carries two stat tiles (33+ jaar /
+   3.000m²) + lead paragraph + offerte CTA. Resentii-inspired.
 3. `PromiseSection` — F2F2F2, 3 outcome cards on white
 4. `RealisatiesSection` — white, 6-project carousel with gold tag chips
 5. `WaaromSection` — F2F2F2, 3 pillar cards on white
