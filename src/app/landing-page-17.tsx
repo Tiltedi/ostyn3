@@ -25,7 +25,6 @@ import { Button } from "@/components/base/buttons/button";
 import { Checkbox } from "@/components/base/checkbox/checkbox";
 import { Input } from "@/components/base/input/input";
 import { TextArea } from "@/components/base/textarea/textarea";
-import { VideoPlayer } from "@/components/base/video-player/video-player";
 import { SectionDivider } from "@/components/shared-assets/section-divider";
 import { cx } from "@/utils/cx";
 
@@ -80,44 +79,53 @@ const OstynHeader = () => {
 
 const HeroSection = () => {
     return (
-        <section className="relative bg-white pt-16 pb-12 md:pt-24 md:pb-16" aria-labelledby="hero-titel">
-            <div className="mx-auto flex w-full max-w-container flex-col items-center px-4 text-center md:px-8">
-                <p className="text-sm font-semibold tracking-[0.18em] text-black uppercase md:text-md">
-                    expand your freedom
-                </p>
-                <h1
-                    id="hero-titel"
-                    className="mt-4 max-w-4xl text-display-md font-medium text-balance text-black md:text-display-lg lg:text-display-xl"
-                >
-                    Een <strong className="font-extrabold">poolhouse op maat</strong>, in <strong className="font-extrabold">eigen atelier</strong> gebouwd. Klaar binnen{" "}
-                    <strong className="font-extrabold">3 tot 6 maanden</strong>.
-                </h1>
-                <p className="mt-5 max-w-2xl text-lg text-black md:mt-6 md:text-xl">
-                    Eén team van ontwerp tot oplevering. Eén afspraak over de prijs. Eén partner die ook na de plaatsing voor u klaarstaat.
-                </p>
-                <div className="mt-8 flex w-full flex-col-reverse items-stretch gap-3 sm:w-auto sm:flex-row sm:items-start md:mt-10">
-                    <Button href="#offerte" iconTrailing={ArrowRight} size="xl">
-                        Vraag uw gratis offerte aan
-                    </Button>
-                    <Button href="#inspiratieboek" color="link-gray" size="xl" iconTrailing={ArrowUpRight} className="text-black">
-                        Download het inspiratieboek
-                    </Button>
-                </div>
-                <p className="mt-6 text-sm text-black/70 md:text-md">
-                    Vrijblijvend · Antwoord binnen 2 werkdagen
-                </p>
-            </div>
+        <section
+            className="relative isolate flex min-h-[calc(100svh-4rem)] flex-col justify-end overflow-hidden md:min-h-[calc(100svh-5rem)]"
+            aria-labelledby="hero-titel"
+        >
+            <img
+                src="https://images.unsplash.com/photo-1564540583246-934409427776?w=2400&h=1600&fit=crop&q=80"
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 -z-10 size-full object-cover"
+            />
+            <div
+                aria-hidden="true"
+                className="absolute inset-0 -z-10 bg-gradient-to-t from-black/85 via-black/45 to-black/10"
+            />
 
-            <div className="relative mt-12 md:mt-16">
-                <div className="mx-auto w-full max-w-container px-4 md:px-8">
-                    <div className="flex justify-center">
-                        <VideoPlayer
-                            size="lg"
-                            thumbnailUrl="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&h=900&fit=crop&q=80"
-                            src="https://www.untitledui.com/videos/untitled-ui-demo.mp4"
-                            className="aspect-video w-full overflow-hidden rounded-2xl shadow-3xl md:max-w-240"
-                        />
+            <div className="mx-auto w-full max-w-container px-4 pt-32 pb-16 md:px-8 md:pt-40 md:pb-24">
+                <div className="max-w-3xl">
+                    <p className="text-sm font-semibold tracking-[0.18em] text-[#C19848] uppercase md:text-md">
+                        expand your freedom
+                    </p>
+                    <h1
+                        id="hero-titel"
+                        className="mt-4 text-display-md font-medium text-balance text-white md:text-display-lg lg:text-display-xl"
+                    >
+                        Een <strong className="font-extrabold">poolhouse op maat</strong>, in <strong className="font-extrabold">eigen atelier</strong> gebouwd. Klaar binnen{" "}
+                        <strong className="font-extrabold">3 tot 6 maanden</strong>.
+                    </h1>
+                    <p className="mt-5 max-w-2xl text-lg text-white/85 md:mt-6 md:text-xl">
+                        Eén team van ontwerp tot oplevering. Eén afspraak over de prijs. Eén partner die ook na de plaatsing voor u klaarstaat.
+                    </p>
+                    <div className="mt-8 flex flex-col-reverse items-stretch gap-3 sm:flex-row sm:items-start md:mt-10">
+                        <Button href="#offerte" iconTrailing={ArrowRight} size="xl">
+                            Vraag uw gratis offerte aan
+                        </Button>
+                        <Button
+                            href="#inspiratieboek"
+                            color="link-gray"
+                            size="xl"
+                            iconTrailing={ArrowUpRight}
+                            className="!text-white hover:!text-white/80"
+                        >
+                            Download het inspiratieboek
+                        </Button>
                     </div>
+                    <p className="mt-6 text-sm text-white/65 md:text-md">
+                        Vrijblijvend · Antwoord binnen 2 werkdagen
+                    </p>
                 </div>
             </div>
         </section>
