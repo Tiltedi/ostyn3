@@ -114,18 +114,18 @@ const HeroSection = () => {
                 />
                 <div
                     aria-hidden="true"
-                    className="absolute inset-0 -z-10 bg-gradient-to-t from-black/55 via-black/15 to-transparent"
+                    className="absolute inset-0 -z-10 bg-gradient-to-t from-black/35 via-black/10 to-transparent"
                 />
 
-                <div className="grid grid-cols-1 gap-3 p-3 md:grid-cols-[3fr_2fr] md:gap-4 md:p-5 lg:p-6">
-                    <div className="flex flex-col justify-between gap-8 rounded-3xl bg-black/85 p-6 backdrop-blur-md md:p-8 lg:p-10">
+                <div className="flex flex-col gap-3 p-3 md:flex-row md:items-end md:justify-between md:gap-8 md:p-6">
+                    <div className="flex flex-col gap-6 rounded-3xl bg-black/85 p-6 backdrop-blur-md md:max-w-xl md:gap-8 md:p-8">
                         <div>
                             <p className="text-sm font-semibold tracking-[0.18em] text-[#C19848] uppercase md:text-md">
                                 expand your freedom
                             </p>
                             <h1
                                 id="hero-titel"
-                                className="mt-3 text-display-sm font-medium text-balance text-white md:text-display-md lg:text-display-lg"
+                                className="mt-3 text-display-sm font-medium text-balance text-white md:text-display-md"
                             >
                                 Een <strong className="font-extrabold">poolhouse op maat</strong>. In{" "}
                                 <strong className="font-extrabold">eigen atelier</strong> gebouwd, klaar in{" "}
@@ -133,7 +133,7 @@ const HeroSection = () => {
                             </h1>
                         </div>
 
-                        <div className="flex flex-wrap items-center gap-4">
+                        <div className="flex flex-wrap items-center gap-3">
                             <a
                                 href="#realisaties"
                                 aria-label="Bekijk onze realisaties"
@@ -143,18 +143,18 @@ const HeroSection = () => {
                                     src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=400&fit=crop&q=80"
                                     alt=""
                                     aria-hidden="true"
-                                    className="size-14 shrink-0 rounded-2xl object-cover ring-1 ring-white/15 transition group-hover:scale-[1.03] md:size-16"
+                                    className="size-12 shrink-0 rounded-2xl object-cover ring-1 ring-white/15 transition group-hover:scale-[1.05]"
                                 />
                                 <img
                                     src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?w=400&h=400&fit=crop&q=80"
                                     alt=""
                                     aria-hidden="true"
-                                    className="size-14 shrink-0 rounded-2xl object-cover ring-1 ring-white/15 transition group-hover:scale-[1.03] md:size-16"
+                                    className="size-12 shrink-0 rounded-2xl object-cover ring-1 ring-white/15 transition group-hover:scale-[1.05]"
                                 />
                             </a>
                             <Button
                                 href="#realisaties"
-                                size="lg"
+                                size="md"
                                 iconTrailing={ArrowUpRight}
                                 className="!bg-white !text-black hover:!bg-white/90"
                             >
@@ -163,28 +163,30 @@ const HeroSection = () => {
                         </div>
                     </div>
 
-                    <div className="flex flex-col gap-5 rounded-3xl bg-black/55 p-6 backdrop-blur-md md:p-8">
-                        <div className="flex gap-2">
-                            <div className="flex-1 rounded-2xl bg-white/10 px-5 py-4">
+                    <div className="flex flex-col gap-3 md:max-w-xs md:items-end">
+                        <div className="hidden gap-2 md:flex">
+                            <div className="rounded-2xl bg-black/55 px-5 py-3 backdrop-blur-md">
                                 <p className="text-display-xs font-extrabold text-white md:text-display-sm">33+</p>
-                                <p className="mt-1 text-xs text-white/70 md:text-sm">jaar familiebedrijf</p>
+                                <p className="mt-0.5 text-xs text-white/70">jaar familiebedrijf</p>
                             </div>
-                            <div className="flex-1 rounded-2xl bg-white/10 px-5 py-4">
+                            <div className="rounded-2xl bg-black/55 px-5 py-3 backdrop-blur-md">
                                 <p className="text-display-xs font-extrabold text-white md:text-display-sm">3.000 m²</p>
-                                <p className="mt-1 text-xs text-white/70 md:text-sm">eigen showroom</p>
+                                <p className="mt-0.5 text-xs text-white/70">eigen showroom</p>
                             </div>
                         </div>
-                        <p className="text-md text-white/85 md:text-lg">
-                            Eén team van ontwerp tot oplevering. Eén afspraak over de prijs. Eén partner die er ook na de plaatsing nog is.
-                        </p>
-                        <Button
-                            href="#offerte"
-                            size="lg"
-                            iconTrailing={ArrowRight}
-                            className="self-start"
-                        >
-                            Vraag uw offerte
-                        </Button>
+                        <div className="flex flex-col gap-4 rounded-3xl bg-black/55 p-6 backdrop-blur-md">
+                            <p className="text-md text-white/90">
+                                Eén team van ontwerp tot oplevering. Eén afspraak over de prijs. Eén partner die er ook na de plaatsing nog is.
+                            </p>
+                            <Button
+                                href="#offerte"
+                                size="md"
+                                iconTrailing={ArrowRight}
+                                className="self-start"
+                            >
+                                Vraag uw offerte
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </div>
