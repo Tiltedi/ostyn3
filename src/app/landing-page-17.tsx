@@ -119,74 +119,82 @@ const HeroSection = () => {
                 />
 
                 <div className="flex flex-col gap-3 p-4 md:flex-row md:items-end md:justify-between md:gap-8 md:p-6">
-                    <div className="flex flex-col gap-6 rounded-3xl bg-black/55 p-6 backdrop-blur-2xl backdrop-saturate-150 md:max-w-xl md:gap-8 md:p-8">
-                        <div>
-                            <p className="text-sm font-semibold tracking-[0.18em] text-[#C19848] uppercase md:text-md">
-                                expand your freedom
-                            </p>
-                            <h1
-                                id="hero-titel"
-                                className="mt-3 text-display-sm font-medium text-balance text-white md:text-display-md"
-                            >
-                                Een <strong className="font-extrabold">poolhouse op maat</strong>. In{" "}
-                                <strong className="font-extrabold">eigen atelier</strong> gebouwd, klaar in{" "}
-                                <strong className="font-extrabold">3 tot 6 maanden</strong>.
-                            </h1>
-                        </div>
+                    <div className="rounded-[32px] bg-white p-2 md:max-w-xl">
+                        <div className="flex flex-col gap-6 rounded-3xl bg-black/55 p-6 backdrop-blur-2xl backdrop-saturate-150 md:gap-8 md:p-8">
+                            <div>
+                                <p className="text-sm font-semibold tracking-[0.18em] text-[#C19848] uppercase md:text-md">
+                                    expand your freedom
+                                </p>
+                                <h1
+                                    id="hero-titel"
+                                    className="mt-3 text-display-sm font-medium text-balance text-white md:text-display-md"
+                                >
+                                    Een <strong className="font-extrabold">poolhouse op maat</strong>. In{" "}
+                                    <strong className="font-extrabold">eigen atelier</strong> gebouwd, klaar in{" "}
+                                    <strong className="font-extrabold">3 tot 6 maanden</strong>.
+                                </h1>
+                            </div>
 
-                        <div className="flex flex-wrap items-center gap-3">
-                            <a
-                                href="#realisaties"
-                                aria-label="Bekijk onze realisaties"
-                                className="group flex shrink-0 gap-2 outline-focus-ring focus-visible:outline-2 focus-visible:outline-offset-4"
-                            >
-                                <img
-                                    src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=400&fit=crop&q=80"
-                                    alt=""
-                                    aria-hidden="true"
-                                    className="size-12 shrink-0 rounded-2xl object-cover ring-1 ring-white/15 transition group-hover:scale-[1.05]"
-                                />
-                                <img
-                                    src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?w=400&h=400&fit=crop&q=80"
-                                    alt=""
-                                    aria-hidden="true"
-                                    className="size-12 shrink-0 rounded-2xl object-cover ring-1 ring-white/15 transition group-hover:scale-[1.05]"
-                                />
-                            </a>
-                            <Button
-                                href="#realisaties"
-                                size="md"
-                                iconTrailing={ArrowUpRight}
-                                className="!bg-white !text-black hover:!bg-white/90"
-                            >
-                                Onze realisaties
-                            </Button>
+                            <div className="flex flex-wrap items-center gap-3">
+                                <a
+                                    href="#realisaties"
+                                    aria-label="Bekijk onze realisaties"
+                                    className="group flex shrink-0 gap-2 outline-focus-ring focus-visible:outline-2 focus-visible:outline-offset-4"
+                                >
+                                    <img
+                                        src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=400&fit=crop&q=80"
+                                        alt=""
+                                        aria-hidden="true"
+                                        className="size-12 shrink-0 rounded-2xl object-cover ring-1 ring-white/15 transition group-hover:scale-[1.05]"
+                                    />
+                                    <img
+                                        src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?w=400&h=400&fit=crop&q=80"
+                                        alt=""
+                                        aria-hidden="true"
+                                        className="size-12 shrink-0 rounded-2xl object-cover ring-1 ring-white/15 transition group-hover:scale-[1.05]"
+                                    />
+                                </a>
+                                <Button
+                                    href="#realisaties"
+                                    size="md"
+                                    iconTrailing={ArrowUpRight}
+                                    className="!bg-white !text-black hover:!bg-white/90"
+                                >
+                                    Onze realisaties
+                                </Button>
+                            </div>
                         </div>
                     </div>
 
                     <div className="flex flex-col gap-3 md:max-w-xs md:items-end">
                         <div className="hidden gap-2 md:flex">
-                            <div className="rounded-2xl bg-black/40 px-5 py-3 backdrop-blur-2xl backdrop-saturate-150">
-                                <p className="text-display-xs font-extrabold text-white md:text-display-sm">33+</p>
-                                <p className="mt-0.5 text-xs text-white/70">jaar familiebedrijf</p>
+                            <div className="rounded-[20px] bg-white p-1">
+                                <div className="rounded-2xl bg-black/40 px-5 py-3 backdrop-blur-2xl backdrop-saturate-150">
+                                    <p className="text-display-xs font-extrabold text-white md:text-display-sm">33+</p>
+                                    <p className="mt-0.5 text-xs text-white/70">jaar familiebedrijf</p>
+                                </div>
                             </div>
-                            <div className="rounded-2xl bg-black/40 px-5 py-3 backdrop-blur-2xl backdrop-saturate-150">
-                                <p className="text-display-xs font-extrabold text-white md:text-display-sm">3.000 m²</p>
-                                <p className="mt-0.5 text-xs text-white/70">eigen showroom</p>
+                            <div className="rounded-[20px] bg-white p-1">
+                                <div className="rounded-2xl bg-black/40 px-5 py-3 backdrop-blur-2xl backdrop-saturate-150">
+                                    <p className="text-display-xs font-extrabold text-white md:text-display-sm">3.000 m²</p>
+                                    <p className="mt-0.5 text-xs text-white/70">eigen showroom</p>
+                                </div>
                             </div>
                         </div>
-                        <div className="flex flex-col gap-4 rounded-3xl bg-black/40 p-6 backdrop-blur-2xl backdrop-saturate-150">
-                            <p className="text-md text-white/95">
-                                Eén team van ontwerp tot oplevering. Eén afspraak over de prijs. Eén partner die er ook na de plaatsing nog is.
-                            </p>
-                            <Button
-                                href="#offerte"
-                                size="md"
-                                iconTrailing={ArrowRight}
-                                className="self-start"
-                            >
-                                Vraag uw offerte
-                            </Button>
+                        <div className="rounded-[32px] bg-white p-2">
+                            <div className="flex flex-col gap-4 rounded-3xl bg-black/40 p-6 backdrop-blur-2xl backdrop-saturate-150">
+                                <p className="text-md text-white/95">
+                                    Eén team van ontwerp tot oplevering. Eén afspraak over de prijs. Eén partner die er ook na de plaatsing nog is.
+                                </p>
+                                <Button
+                                    href="#offerte"
+                                    size="md"
+                                    iconTrailing={ArrowRight}
+                                    className="self-start"
+                                >
+                                    Vraag uw offerte
+                                </Button>
+                            </div>
                         </div>
                     </div>
                 </div>
