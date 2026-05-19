@@ -41,24 +41,7 @@ const OstynLogo = ({ className }: { className?: string }) => (
 const OstynHeader = () => {
     return (
         <header className="sticky top-0 z-50 w-full border-b border-black/10 bg-white">
-            <div className="mx-auto flex h-6 max-w-container items-end justify-end gap-6 px-4 md:px-8">
-                <a
-                    href="#"
-                    className="flex items-center gap-1.5 text-xs text-black/60 outline-focus-ring transition hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2"
-                >
-                    klantenportaal
-                    <ArrowUpRight className="size-3.5" aria-hidden="true" />
-                </a>
-                <button
-                    type="button"
-                    className="flex items-center gap-1 text-xs text-black/60 outline-focus-ring transition hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2"
-                >
-                    nl
-                    <ChevronDown className="size-3.5" aria-hidden="true" />
-                </button>
-            </div>
-
-            <div className="mx-auto flex h-16 max-w-container items-end justify-between gap-6 px-4 pb-2 md:h-20 md:px-8 md:pb-3">
+            <div className="mx-auto flex h-16 max-w-container items-center justify-between gap-6 px-4 md:h-20 md:px-8">
                 <a href="#" aria-label="Ostyn — startpagina" className="flex items-center">
                     <OstynLogo />
                 </a>
@@ -82,20 +65,38 @@ const OstynHeader = () => {
                     </ul>
                 </nav>
 
-                <div className="flex items-center gap-5 md:gap-6">
-                    <a
-                        href="#offerte"
-                        className="text-md text-[#C19848] outline-focus-ring transition hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 max-md:hidden"
-                    >
-                        afspraak maken
-                    </a>
-                    <button
-                        type="button"
-                        aria-label="Menu openen"
-                        className="flex items-center justify-center p-1 outline-focus-ring transition hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2"
-                    >
-                        <Menu01 className="size-6 text-black" aria-hidden="true" />
-                    </button>
+                <div className="flex flex-col items-end gap-1">
+                    <div className="hidden items-center gap-5 md:flex">
+                        <a
+                            href="#"
+                            className="flex items-center gap-1.5 text-xs text-black/60 outline-focus-ring transition hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2"
+                        >
+                            klantenportaal
+                            <ArrowUpRight className="size-3.5" aria-hidden="true" />
+                        </a>
+                        <button
+                            type="button"
+                            className="flex items-center gap-1 text-xs text-black/60 outline-focus-ring transition hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2"
+                        >
+                            nl
+                            <ChevronDown className="size-3.5" aria-hidden="true" />
+                        </button>
+                    </div>
+                    <div className="flex items-center gap-5">
+                        <a
+                            href="#offerte"
+                            className="text-md text-[#C19848] outline-focus-ring transition hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 max-md:hidden"
+                        >
+                            afspraak maken
+                        </a>
+                        <button
+                            type="button"
+                            aria-label="Menu openen"
+                            className="flex items-center justify-center p-1 outline-focus-ring transition hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2"
+                        >
+                            <Menu01 className="size-6 text-black" aria-hidden="true" />
+                        </button>
+                    </div>
                 </div>
             </div>
         </header>
@@ -104,8 +105,8 @@ const OstynHeader = () => {
 
 const HeroSection = () => {
     return (
-        <section className="px-3 pb-3 md:px-4 md:pb-4" aria-labelledby="hero-titel">
-            <div className="relative isolate flex min-h-[calc(100svh-5.5rem-0.75rem)] flex-col justify-end overflow-hidden rounded-3xl md:min-h-[calc(100svh-6.5rem-1rem)]">
+        <section className="p-4 md:p-6 lg:p-8" aria-labelledby="hero-titel">
+            <div className="relative isolate flex min-h-[calc(100svh-4rem-2rem)] flex-col justify-end overflow-hidden rounded-3xl md:min-h-[calc(100svh-5rem-3rem)] lg:min-h-[calc(100svh-5rem-4rem)]">
                 <img
                     src="/hero.jpg"
                     alt=""
@@ -114,11 +115,11 @@ const HeroSection = () => {
                 />
                 <div
                     aria-hidden="true"
-                    className="absolute inset-0 -z-10 bg-gradient-to-t from-black/35 via-black/10 to-transparent"
+                    className="absolute inset-0 -z-10 bg-gradient-to-t from-black/30 via-black/5 to-transparent"
                 />
 
-                <div className="flex flex-col gap-3 p-3 md:flex-row md:items-end md:justify-between md:gap-8 md:p-6">
-                    <div className="flex flex-col gap-6 rounded-3xl bg-black/85 p-6 backdrop-blur-md md:max-w-xl md:gap-8 md:p-8">
+                <div className="flex flex-col gap-3 p-4 md:flex-row md:items-end md:justify-between md:gap-8 md:p-6">
+                    <div className="flex flex-col gap-6 rounded-3xl bg-black/55 p-6 backdrop-blur-2xl backdrop-saturate-150 md:max-w-xl md:gap-8 md:p-8">
                         <div>
                             <p className="text-sm font-semibold tracking-[0.18em] text-[#C19848] uppercase md:text-md">
                                 expand your freedom
@@ -165,17 +166,17 @@ const HeroSection = () => {
 
                     <div className="flex flex-col gap-3 md:max-w-xs md:items-end">
                         <div className="hidden gap-2 md:flex">
-                            <div className="rounded-2xl bg-black/55 px-5 py-3 backdrop-blur-md">
+                            <div className="rounded-2xl bg-black/40 px-5 py-3 backdrop-blur-2xl backdrop-saturate-150">
                                 <p className="text-display-xs font-extrabold text-white md:text-display-sm">33+</p>
                                 <p className="mt-0.5 text-xs text-white/70">jaar familiebedrijf</p>
                             </div>
-                            <div className="rounded-2xl bg-black/55 px-5 py-3 backdrop-blur-md">
+                            <div className="rounded-2xl bg-black/40 px-5 py-3 backdrop-blur-2xl backdrop-saturate-150">
                                 <p className="text-display-xs font-extrabold text-white md:text-display-sm">3.000 m²</p>
                                 <p className="mt-0.5 text-xs text-white/70">eigen showroom</p>
                             </div>
                         </div>
-                        <div className="flex flex-col gap-4 rounded-3xl bg-black/55 p-6 backdrop-blur-md">
-                            <p className="text-md text-white/90">
+                        <div className="flex flex-col gap-4 rounded-3xl bg-black/40 p-6 backdrop-blur-2xl backdrop-saturate-150">
+                            <p className="text-md text-white/95">
                                 Eén team van ontwerp tot oplevering. Eén afspraak over de prijs. Eén partner die er ook na de plaatsing nog is.
                             </p>
                             <Button
