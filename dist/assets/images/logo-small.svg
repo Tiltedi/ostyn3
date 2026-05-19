@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- PLACEHOLDER — replace with the real Ostyn eagle (arend) icon. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Ostyn">
+    <rect width="64" height="64" rx="8" fill="#c19848"/>
+    <text x="32" y="44"
+          text-anchor="middle"
+          font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+          font-weight="700"
+          font-size="34"
+          fill="#ffffff">O</text>
+</svg>

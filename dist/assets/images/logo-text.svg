@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- PLACEHOLDER — replace with the real Ostyn wordmark + eagle SVG.
+     This file exists only so the page renders; do not ship to production. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" role="img" aria-label="Ostyn">
+    <text x="0" y="68"
+          font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+          font-weight="600"
+          font-size="64"
+          letter-spacing="-1"
+          fill="#1a1a1a">Ostyn</text>
+</svg>
