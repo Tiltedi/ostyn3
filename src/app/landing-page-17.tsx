@@ -35,30 +35,30 @@ const productNav = [
 ];
 
 const OstynLogo = ({ className }: { className?: string }) => (
-    <img src="/logo-ostyn.png" alt="Ostyn" className={cx("h-10 w-auto md:h-12", className)} />
+    <img src="/logo-ostyn.png" alt="Ostyn" className={cx("h-9 w-auto md:h-10", className)} />
 );
 
 const OstynHeader = () => {
     return (
         <header className="sticky top-0 z-50 w-full border-b border-black/10 bg-white">
-            <div className="mx-auto flex h-8 max-w-container items-center justify-end gap-6 px-4 md:px-8">
+            <div className="mx-auto flex h-7 max-w-container items-end justify-end gap-6 px-4 pb-1 md:px-8">
                 <a
                     href="#"
-                    className="flex items-center gap-1.5 text-xs text-black outline-focus-ring transition hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2"
+                    className="flex items-center gap-1.5 text-xs text-black/60 outline-focus-ring transition hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2"
                 >
                     klantenportaal
                     <ArrowUpRight className="size-3.5" aria-hidden="true" />
                 </a>
                 <button
                     type="button"
-                    className="flex items-center gap-1 text-xs text-black outline-focus-ring transition hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2"
+                    className="flex items-center gap-1 text-xs text-black/60 outline-focus-ring transition hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2"
                 >
                     nl
                     <ChevronDown className="size-3.5" aria-hidden="true" />
                 </button>
             </div>
 
-            <div className="mx-auto flex h-16 max-w-container items-center justify-between gap-6 border-t border-black/5 px-4 md:h-20 md:px-8">
+            <div className="mx-auto flex h-14 max-w-container items-center justify-between gap-6 px-4 md:h-16 md:px-8">
                 <a href="#" aria-label="Ostyn — startpagina" className="flex items-center">
                     <OstynLogo />
                 </a>
@@ -105,7 +105,7 @@ const OstynHeader = () => {
 const HeroSection = () => {
     return (
         <section
-            className="relative isolate flex min-h-[calc(100svh-6rem)] flex-col justify-end overflow-hidden md:min-h-[calc(100svh-7rem)]"
+            className="relative isolate flex min-h-[calc(100svh-5.25rem)] flex-col justify-end overflow-hidden md:min-h-[calc(100svh-5.75rem)]"
             aria-labelledby="hero-titel"
         >
             <img
