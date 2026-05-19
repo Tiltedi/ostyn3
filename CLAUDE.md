@@ -128,8 +128,8 @@ Marketing landing page for **Ostyn**, a Belgian premium poolhouse company
 
 ## Placeholders to swap when real assets arrive
 
-- `HeroSection` photo: Unsplash modern villa
-  (`photo-1564540583246-934409427776`).
+- `HeroSection` photo: served from `public/hero.jpg` (real
+  Ostyn-supplied poolhouse photo).
 - `RealisatiesSection` 6 project photos: all Unsplash placeholders.
 - `ShowroomSection` image: Unsplash interior, not real Dottenijs showroom.
 - `OfferteSection` form `action="#"` is a no-op — wire to the real

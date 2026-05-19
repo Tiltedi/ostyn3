@@ -84,7 +84,7 @@ const HeroSection = () => {
             aria-labelledby="hero-titel"
         >
             <img
-                src="https://images.unsplash.com/photo-1564540583246-934409427776?w=2400&h=1600&fit=crop&q=80"
+                src="/hero.jpg"
                 alt=""
                 aria-hidden="true"
                 className="absolute inset-0 -z-10 size-full object-cover"
