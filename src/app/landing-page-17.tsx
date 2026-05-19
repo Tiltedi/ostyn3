@@ -7,9 +7,11 @@ import {
     ArrowUpRight,
     Calendar,
     Check,
+    ChevronDown,
     Clock,
     Mail01,
     MarkerPin01,
+    Menu01,
     Phone,
     Send01,
     Star01,
@@ -22,49 +24,78 @@ import { TextArea } from "@/components/base/textarea/textarea";
 import { SectionDivider } from "@/components/shared-assets/section-divider";
 import { cx } from "@/utils/cx";
 
-const navItems = [
-    { label: "Realisaties", href: "#realisaties" },
-    { label: "Waarom Ostyn", href: "#waarom" },
-    { label: "Hoe werkt het", href: "#proces" },
-    { label: "Showroom", href: "#showroom" },
+const productNav = [
+    { label: "tuinhuis", href: "#" },
+    { label: "carport", href: "#" },
+    { label: "garage", href: "#" },
+    { label: "poolhouse", href: "#", active: true },
+    { label: "veranda", href: "#" },
+    { label: "pergola", href: "#" },
+    { label: "realisaties", href: "#realisaties" },
 ];
 
 const OstynLogo = ({ className }: { className?: string }) => (
-    <img src="/logo-text.svg" alt="Ostyn" className={cx("h-7 w-auto md:h-9", className)} />
+    <img src="/logo-ostyn.png" alt="Ostyn" className={cx("h-10 w-auto md:h-12", className)} />
 );
 
 const OstynHeader = () => {
     return (
-        <header className="sticky top-0 z-50 flex h-16 w-full items-center justify-center border-b border-black/10 bg-white/95 backdrop-blur md:h-20">
-            <div className="flex size-full max-w-container flex-1 items-center pr-3 pl-4 md:px-8">
-                <div className="flex w-full items-center justify-between gap-4">
-                    <a href="#" aria-label="Ostyn — startpagina" className="flex items-center">
-                        <OstynLogo />
+        <header className="sticky top-0 z-50 w-full border-b border-black/10 bg-white">
+            <div className="mx-auto flex h-8 max-w-container items-center justify-end gap-6 px-4 md:px-8">
+                <a
+                    href="#"
+                    className="flex items-center gap-1.5 text-xs text-black outline-focus-ring transition hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2"
+                >
+                    klantenportaal
+                    <ArrowUpRight className="size-3.5" aria-hidden="true" />
+                </a>
+                <button
+                    type="button"
+                    className="flex items-center gap-1 text-xs text-black outline-focus-ring transition hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2"
+                >
+                    nl
+                    <ChevronDown className="size-3.5" aria-hidden="true" />
+                </button>
+            </div>
+
+            <div className="mx-auto flex h-16 max-w-container items-center justify-between gap-6 border-t border-black/5 px-4 md:h-20 md:px-8">
+                <a href="#" aria-label="Ostyn — startpagina" className="flex items-center">
+                    <OstynLogo />
+                </a>
+
+                <nav aria-label="Hoofdnavigatie" className="hidden md:block">
+                    <ul className="flex items-center gap-6 lg:gap-8">
+                        {productNav.map((item) => (
+                            <li key={item.label}>
+                                <a
+                                    href={item.href}
+                                    className={cx(
+                                        "text-md text-black outline-focus-ring transition hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2",
+                                        item.active && "font-bold",
+                                    )}
+                                    aria-current={item.active ? "page" : undefined}
+                                >
+                                    {item.label}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
+
+                <div className="flex items-center gap-5 md:gap-6">
+                    <a
+                        href="#offerte"
+                        className="text-md text-[#C19848] outline-focus-ring transition hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 max-md:hidden"
+                    >
+                        afspraak maken
                     </a>
-
-                    <nav aria-label="Hoofdnavigatie" className="max-md:hidden">
-                        <ul className="flex items-center gap-1">
-                            {navItems.map((item) => (
-                                <li key={item.label}>
-                                    <a
-                                        href={item.href}
-                                        className="flex items-center rounded-lg px-3 py-2 text-sm font-medium text-black outline-focus-ring transition duration-100 hover:bg-[#F2F2F2] focus-visible:outline-2 focus-visible:outline-offset-2"
-                                    >
-                                        {item.label}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </nav>
-
-                    <div className="flex items-center gap-3">
-                        <Button href="#offerte" size="sm" className="max-md:hidden">
-                            Offerte aanvragen
-                        </Button>
-                        <Button href="#offerte" size="sm" className="md:hidden">
-                            Offerte
-                        </Button>
-                    </div>
+                    <button
+                        type="button"
+                        aria-label="Menu openen"
+                        className="flex items-center justify-center p-1 outline-focus-ring transition hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2"
+                    >
+                        <Menu01 className="size-6 text-black" aria-hidden="true" />
+                    </button>
                 </div>
             </div>
         </header>
@@ -74,7 +105,7 @@ const OstynHeader = () => {
 const HeroSection = () => {
     return (
         <section
-            className="relative isolate flex min-h-[calc(100svh-4rem)] flex-col justify-end overflow-hidden md:min-h-[calc(100svh-5rem)]"
+            className="relative isolate flex min-h-[calc(100svh-6rem)] flex-col justify-end overflow-hidden md:min-h-[calc(100svh-7rem)]"
             aria-labelledby="hero-titel"
         >
             <img
@@ -596,21 +627,21 @@ const ShowroomSection = () => {
         <section id="showroom" className="bg-[#C19848] py-16 md:py-24" aria-labelledby="showroom-titel">
             <div className="mx-auto grid max-w-container grid-cols-1 gap-12 px-4 md:px-8 lg:grid-cols-2 lg:items-center lg:gap-16">
                 <div className="flex flex-col">
-                    <p className="text-sm font-semibold tracking-wider text-black uppercase md:text-md">Showroom</p>
-                    <h2 id="showroom-titel" className="mt-3 text-display-sm font-medium text-balance text-black md:text-display-md">
+                    <p className="text-sm font-semibold tracking-wider text-white uppercase md:text-md">Showroom</p>
+                    <h2 id="showroom-titel" className="mt-3 text-display-sm font-medium text-balance text-white md:text-display-md">
                         Kom langs in <strong className="font-extrabold">Dottenijs</strong>.
                     </h2>
-                    <p className="mt-4 text-lg text-black md:mt-5">
+                    <p className="mt-4 text-lg text-white md:mt-5">
                         <strong className="font-semibold">3.000 m² overdekt</strong>, zeven dagen op zeven open. Poolhouses, veranda&apos;s,
                         carports en tuinkamers op ware grootte. Materialen die u kunt voelen — Afrormosia, Trespa, Aquapanel.
                     </p>
-                    <ul className="mt-8 flex flex-col gap-4 text-md text-black">
+                    <ul className="mt-8 flex flex-col gap-4 text-md text-white">
                         <li className="flex items-start gap-3">
-                            <MarkerPin01 className="mt-0.5 size-5 shrink-0 text-black" />
+                            <MarkerPin01 className="mt-0.5 size-5 shrink-0 text-white" />
                             <span>Engelse Wandeling 2, 7711 Dottenijs (Mouscron)</span>
                         </li>
                         <li className="flex items-start gap-3">
-                            <Calendar className="mt-0.5 size-5 shrink-0 text-black" />
+                            <Calendar className="mt-0.5 size-5 shrink-0 text-white" />
                             <span>7 dagen op 7 open — ook tijdens weekends en feestdagen</span>
                         </li>
                     </ul>
@@ -627,9 +658,9 @@ const ShowroomSection = () => {
                 <div className="relative">
                     <div className="overflow-hidden rounded-2xl">
                         <img
-                            src="https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?w=1200&h=900&fit=crop&q=80"
-                            alt="Ostyn showroom in Dottenijs"
-                            className="aspect-[4/3] w-full object-cover"
+                            src="/showroom.jpg"
+                            alt="Adviesgesprek in de Ostyn showroom in Dottenijs"
+                            className="aspect-square w-full object-cover"
                         />
                     </div>
                     <div className="absolute -right-4 -bottom-4 hidden flex-col gap-1 rounded-2xl bg-white px-6 py-4 shadow-2xl md:flex">
@@ -782,7 +813,7 @@ const OstynFooter = () => {
             <div className="mx-auto max-w-container px-4 md:px-8">
                 <div className="grid grid-cols-1 gap-12 border-t border-black/10 pt-12 md:grid-cols-2 lg:grid-cols-4">
                     <div className="flex flex-col gap-4">
-                        <img src="/logo-text.svg" alt="Ostyn" className="h-9 w-auto" />
+                        <img src="/logo-ostyn.png" alt="Ostyn" className="h-10 w-auto" />
                         <p className="max-w-xs text-md text-black">
                             Specialist in tuinconstructies, woonuitbreidingen en poolhouses. Sinds 1992.
                         </p>

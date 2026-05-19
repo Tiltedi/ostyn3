@@ -35,8 +35,12 @@ Marketing landing page for **Ostyn**, a Belgian premium poolhouse company
    Never cream / tan / beige. UntitledUI's default `bg-utility-brand-50_alt`
    and similar tokens have been replaced everywhere with one of these three.
 
-2. **Text is ALWAYS `text-black` (#000000)** on white / F2F2F2 / gold.
-   `text-white` is used only when text sits on the dark hero photo overlay.
+2. **Text color rule**:
+   - On `bg-white` and `bg-[#F2F2F2]`: text is `text-black`.
+   - On `bg-[#C19848]` (gold sections like Showroom): text is `text-white`.
+     CTAs inside gold sections keep their own button colors.
+   - On the dark hero photo overlay: text is `text-white`, with the
+     gold eyebrow as the one deliberate gold-text exception.
 
 3. **Emphasis = font weight, NEVER color.** Wrap key words in
    `<strong className="font-extrabold">…</strong>`. No gold-tinted text.
@@ -131,7 +135,8 @@ Marketing landing page for **Ostyn**, a Belgian premium poolhouse company
 - `HeroSection` photo: served from `public/hero.jpg` (real
   Ostyn-supplied poolhouse photo).
 - `RealisatiesSection` 6 project photos: all Unsplash placeholders.
-- `ShowroomSection` image: Unsplash interior, not real Dottenijs showroom.
+- `ShowroomSection` image: served from `public/showroom.jpg` (real
+  Ostyn adviesgesprek photo, 1200×1200 JPEG).
 - `OfferteSection` form `action="#"` is a no-op — wire to the real
   endpoint when ready.
 
