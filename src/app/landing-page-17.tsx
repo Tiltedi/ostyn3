@@ -119,7 +119,7 @@ const HeroSection = () => {
                 />
 
                 <div className="flex flex-col gap-3 p-4 md:flex-row md:items-end md:justify-between md:gap-8 md:p-6">
-                    <div className="flex flex-col gap-6 rounded-3xl bg-black/55 p-6 backdrop-blur-2xl backdrop-saturate-150 md:max-w-xl md:gap-8 md:p-8">
+                    <div className="flex flex-col gap-6 rounded-3xl bg-black/55 p-6 ring-4 ring-white backdrop-blur-2xl backdrop-saturate-150 md:max-w-xl md:gap-8 md:p-8">
                         <div>
                             <p className="text-sm font-semibold tracking-[0.18em] text-[#C19848] uppercase md:text-md">
                                 expand your freedom
@@ -166,16 +166,16 @@ const HeroSection = () => {
 
                     <div className="flex flex-col gap-3 md:max-w-xs md:items-end">
                         <div className="hidden gap-2 md:flex">
-                            <div className="rounded-2xl bg-black/40 px-5 py-3 backdrop-blur-2xl backdrop-saturate-150">
+                            <div className="rounded-2xl bg-black/40 px-5 py-3 ring-4 ring-white backdrop-blur-2xl backdrop-saturate-150">
                                 <p className="text-display-xs font-extrabold text-white md:text-display-sm">33+</p>
                                 <p className="mt-0.5 text-xs text-white/70">jaar familiebedrijf</p>
                             </div>
-                            <div className="rounded-2xl bg-black/40 px-5 py-3 backdrop-blur-2xl backdrop-saturate-150">
+                            <div className="rounded-2xl bg-black/40 px-5 py-3 ring-4 ring-white backdrop-blur-2xl backdrop-saturate-150">
                                 <p className="text-display-xs font-extrabold text-white md:text-display-sm">3.000 m²</p>
                                 <p className="mt-0.5 text-xs text-white/70">eigen showroom</p>
                             </div>
                         </div>
-                        <div className="flex flex-col gap-4 rounded-3xl bg-black/40 p-6 backdrop-blur-2xl backdrop-saturate-150">
+                        <div className="flex flex-col gap-4 rounded-3xl bg-black/40 p-6 ring-4 ring-white backdrop-blur-2xl backdrop-saturate-150">
                             <p className="text-md text-white/95">
                                 Eén team van ontwerp tot oplevering. Eén afspraak over de prijs. Eén partner die er ook na de plaatsing nog is.
                             </p>
