@@ -5,20 +5,14 @@ import {
     ArrowLeft,
     ArrowRight,
     ArrowUpRight,
-    Award01,
-    Building01,
     Calendar,
     Check,
-    CheckCircle,
     Clock,
-    Cube01,
-    Heart,
     Mail01,
     MarkerPin01,
     Phone,
     Send01,
     Star01,
-    Tool01,
 } from "@untitledui/icons";
 import { Carousel } from "@/components/application/carousel/carousel-base";
 import { Button } from "@/components/base/buttons/button";
@@ -132,20 +126,17 @@ const HeroSection = () => {
     );
 };
 
-type Promise = { title: string; body: string; icon: FC<{ className?: string }> };
+type Promise = { title: string; body: string };
 const promises: Promise[] = [
     {
-        icon: Cube01,
         title: "3D-ontwerp en offerte vooraf",
         body: "U ziet en weet wat u koopt, voor u tekent. Geen meerwerk halverwege.",
     },
     {
-        icon: Building01,
         title: "Productie en plaatsing in één hand",
         body: "Onze eigen vaklui, in ons atelier in Dottenijs. Geen onderaanneming, geen tussenpartij.",
     },
     {
-        icon: Heart,
         title: "Nazorg door ons SAV-team",
         body: "Bereikbaar, ook lang na de oplevering. Geen externe hotline.",
     },
@@ -169,14 +160,12 @@ const PromiseSection = () => {
                     </p>
                 </div>
 
-                <ul className="mt-12 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-3">
+                <ul className="mt-12 grid grid-cols-1 gap-6 md:mt-16 md:grid-cols-3 md:gap-8">
                     {promises.map((item) => (
-                        <li key={item.title} className="flex flex-col items-start rounded-2xl bg-white p-6 md:p-8">
-                            <div className="flex size-12 items-center justify-center rounded-full bg-[#C19848] text-white">
-                                <item.icon className="size-6" />
-                            </div>
-                            <h3 className="mt-5 text-xl font-semibold text-black md:text-display-xs">{item.title}</h3>
-                            <p className="mt-2 text-md text-black">{item.body}</p>
+                        <li key={item.title} className="flex flex-col items-start rounded-2xl bg-white p-8 md:p-10">
+                            <span aria-hidden="true" className="block h-0.5 w-10 bg-[#C19848]" />
+                            <h3 className="mt-8 text-xl font-semibold text-black md:text-display-xs">{item.title}</h3>
+                            <p className="mt-3 text-md text-black/70">{item.body}</p>
                         </li>
                     ))}
                 </ul>
@@ -322,10 +311,10 @@ const RealisatiesSection = () => {
     );
 };
 
-type Pillar = { eyebrow: string; title: string; body: ReactNode; icon: FC<{ className?: string }> };
+type Pillar = { figure: string; eyebrow: string; title: string; body: ReactNode };
 const pillars: Pillar[] = [
     {
-        icon: Award01,
+        figure: "1992",
         eyebrow: "Sinds 1992",
         title: "33 jaar familiebedrijf",
         body: (
@@ -344,7 +333,7 @@ const pillars: Pillar[] = [
         ),
     },
     {
-        icon: Tool01,
+        figure: "100%",
         eyebrow: "Niets uitbesteed",
         title: "Eigen atelier",
         body: (
@@ -356,9 +345,9 @@ const pillars: Pillar[] = [
         ),
     },
     {
-        icon: Building01,
+        figure: "3.000 m²",
         eyebrow: "Open 7/7",
-        title: "3.000 m² showroom",
+        title: "Grootste showroom in België",
         body: (
             <p>
                 De <strong className="font-semibold">grootste overdekte showroom</strong> voor tuinconstructies in België en
@@ -384,16 +373,16 @@ const WaaromSection = () => {
                     {pillars.map((p) => (
                         <li
                             key={p.title}
-                            className="flex flex-col items-start gap-5 rounded-2xl bg-white p-6 md:p-8"
+                            className="flex flex-col rounded-2xl bg-white p-8 md:p-10"
                         >
-                            <div className="flex size-12 items-center justify-center rounded-xl bg-[#C19848] text-white">
-                                <p.icon className="size-6" />
-                            </div>
-                            <div>
+                            <p className="text-display-md font-extrabold tracking-tight text-black md:text-display-lg">
+                                {p.figure}
+                            </p>
+                            <div className="mt-8 border-t border-black/10 pt-6">
                                 <p className="text-xs font-semibold tracking-wider text-black uppercase">{p.eyebrow}</p>
-                                <h3 className="mt-1 text-xl font-semibold text-black md:text-display-xs">{p.title}</h3>
+                                <h3 className="mt-2 text-xl font-semibold text-black md:text-display-xs">{p.title}</h3>
                             </div>
-                            <div className="text-md text-black">{p.body}</div>
+                            <div className="mt-4 text-md text-black/70">{p.body}</div>
                         </li>
                     ))}
                 </ul>
@@ -545,11 +534,24 @@ const TestimonialsSection = () => {
     );
 };
 
-const aftercareItems = [
-    "Eigen SAV-team voor service na verkoop — geen externe hotline.",
-    "Onderhouds- en garantievoorwaarden open en op voorhand beschikbaar.",
-    "Klantenportaal blijft toegankelijk, ook jaren na de oplevering.",
-    "Familiebedrijf sinds 1992. De namen op de offerte zijn de namen die u nadien terugvindt.",
+type AftercareItem = { title: string; body: string };
+const aftercareItems: AftercareItem[] = [
+    {
+        title: "Eigen SAV-team",
+        body: "Service na verkoop intern georganiseerd. Geen externe hotline, geen ticketsysteem.",
+    },
+    {
+        title: "Open garantie",
+        body: "Onderhouds- en garantievoorwaarden op voorhand beschikbaar — niet in de kleine letters.",
+    },
+    {
+        title: "Klantenportaal",
+        body: "Blijft toegankelijk, ook jaren na de oplevering — voor planning, documenten en onderhoud.",
+    },
+    {
+        title: "Familiebedrijf sinds 1992",
+        body: "De namen op de offerte zijn de namen die u nadien terugvindt.",
+    },
 ];
 
 const NazorgSection = () => {
@@ -575,13 +577,11 @@ const NazorgSection = () => {
                         </p>
                     </div>
 
-                    <ul className="flex flex-col gap-5">
+                    <ul className="flex flex-col border-t border-black/10">
                         {aftercareItems.map((item) => (
-                            <li key={item} className="flex items-start gap-4">
-                                <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-[#C19848]">
-                                    <CheckCircle className="size-5 text-white" />
-                                </span>
-                                <p className="text-md text-black md:text-lg">{item}</p>
+                            <li key={item.title} className="border-b border-black/10 py-6">
+                                <p className="text-lg font-semibold text-black md:text-xl">{item.title}</p>
+                                <p className="mt-2 text-md text-black/70">{item.body}</p>
                             </li>
                         ))}
                     </ul>
