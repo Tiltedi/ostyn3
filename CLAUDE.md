@@ -163,6 +163,11 @@ component from scratch.
 
 ## Workflow notes for new sessions
 
+- **Branch**: work directly on `claude/ready-3BJ0B` (production). The
+  user wants every change to land on prod immediately — no feature
+  branches, no merge step. If a session is auto-pinned to a different
+  branch in the harness instructions, switch to `claude/ready-3BJ0B`
+  and continue there.
 - **One file**: keep adding sections to `src/app/landing-page-17.tsx`.
   When you add one, slot the component into the `LandingPage17` render
   tree at the bottom.
