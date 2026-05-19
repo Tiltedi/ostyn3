@@ -121,17 +121,17 @@
     --color-alpha-white: rgb(255 255 255);
     --color-alpha-black: rgb(0 0 0);
 
-    --color-brand-50: rgb(251 247 238);
-    --color-brand-100: rgb(245 234 208);
-    --color-brand-200: rgb(235 213 160);
-    --color-brand-300: rgb(221 191 115);
-    --color-brand-400: rgb(209 171 86);
-    --color-brand-500: rgb(193 152 72);
-    --color-brand-600: rgb(167 130 57);
-    --color-brand-700: rgb(135 102 46);
-    --color-brand-800: rgb(110 83 38);
-    --color-brand-900: rgb(90 67 31);
-    --color-brand-950: rgb(47 35 16);
+    --color-brand-50: rgb(252 248 240);
+    --color-brand-100: rgb(247 238 215);
+    --color-brand-200: rgb(238 220 175);
+    --color-brand-300: rgb(225 200 130);
+    --color-brand-400: rgb(212 180 95);
+    --color-brand-500: rgb(204 165 80);
+    --color-brand-600: rgb(193 152 72);
+    --color-brand-700: rgb(163 128 60);
+    --color-brand-800: rgb(130 102 48);
+    --color-brand-900: rgb(98 77 38);
+    --color-brand-950: rgb(50 38 18);
 
     /* LIGHT MODE VARIABLES */
 
