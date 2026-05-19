@@ -42,7 +42,7 @@ const OstynLogo = ({ className }: { className?: string }) => (
 
 const OstynHeader = () => {
     return (
-        <header className="sticky top-0 z-50 flex h-16 w-full items-center justify-center border-b border-secondary bg-utility-brand-50_alt/95 backdrop-blur md:h-20">
+        <header className="sticky top-0 z-50 flex h-16 w-full items-center justify-center border-b border-black/10 bg-white/95 backdrop-blur md:h-20">
             <div className="flex size-full max-w-container flex-1 items-center pr-3 pl-4 md:px-8">
                 <div className="flex w-full items-center justify-between gap-4">
                     <a href="#" aria-label="Ostyn — startpagina" className="flex items-center">
@@ -55,7 +55,7 @@ const OstynHeader = () => {
                                 <li key={item.label}>
                                     <a
                                         href={item.href}
-                                        className="flex items-center rounded-lg px-3 py-2 text-sm font-semibold text-brand-primary outline-focus-ring transition duration-100 hover:bg-utility-brand-100_alt focus-visible:outline-2 focus-visible:outline-offset-2"
+                                        className="flex items-center rounded-lg px-3 py-2 text-sm font-semibold text-black outline-focus-ring transition duration-100 hover:bg-[#F2F2F2] focus-visible:outline-2 focus-visible:outline-offset-2"
                                     >
                                         {item.label}
                                     </a>
@@ -80,30 +80,30 @@ const OstynHeader = () => {
 
 const HeroSection = () => {
     return (
-        <section className="relative bg-utility-brand-50_alt pt-16 pb-12 md:pt-24 md:pb-16" aria-labelledby="hero-titel">
+        <section className="relative bg-white pt-16 pb-12 md:pt-24 md:pb-16" aria-labelledby="hero-titel">
             <div className="mx-auto flex w-full max-w-container flex-col items-center px-4 text-center md:px-8">
-                <p className="text-sm font-semibold tracking-[0.18em] text-brand-secondary uppercase md:text-md">
+                <p className="text-sm font-bold tracking-[0.18em] text-black uppercase md:text-md">
                     expand your freedom
                 </p>
                 <h1
                     id="hero-titel"
-                    className="mt-4 max-w-4xl text-display-md font-semibold text-balance text-brand-primary md:text-display-lg lg:text-display-xl"
+                    className="mt-4 max-w-4xl text-display-md font-semibold text-balance text-black md:text-display-lg lg:text-display-xl"
                 >
-                    Een <em className="not-italic text-fg-brand-secondary">poolhouse op maat</em>, in eigen atelier gebouwd. Klaar binnen{" "}
-                    <em className="not-italic text-fg-brand-secondary">3 tot 6 maanden</em>.
+                    Een <strong className="font-black">poolhouse op maat</strong>, in <strong className="font-black">eigen atelier</strong> gebouwd. Klaar binnen{" "}
+                    <strong className="font-black">3 tot 6 maanden</strong>.
                 </h1>
-                <p className="mt-5 max-w-2xl text-lg text-tertiary md:mt-6 md:text-xl">
+                <p className="mt-5 max-w-2xl text-lg text-black md:mt-6 md:text-xl">
                     Eén team van ontwerp tot oplevering. Eén afspraak over de prijs. Eén partner die ook na de plaatsing voor u klaarstaat.
                 </p>
                 <div className="mt-8 flex w-full flex-col-reverse items-stretch gap-3 sm:w-auto sm:flex-row sm:items-start md:mt-10">
                     <Button href="#offerte" iconTrailing={ArrowRight} size="xl">
                         Vraag uw gratis offerte aan
                     </Button>
-                    <Button href="#inspiratieboek" color="link-color" size="xl" iconTrailing={ArrowUpRight}>
+                    <Button href="#inspiratieboek" color="link-gray" size="xl" iconTrailing={ArrowUpRight} className="text-black">
                         Download het inspiratieboek
                     </Button>
                 </div>
-                <p className="mt-6 text-sm text-quaternary md:text-md">
+                <p className="mt-6 text-sm text-black/70 md:text-md">
                     Vrijblijvend · Antwoord binnen 2 werkdagen
                 </p>
             </div>
@@ -145,17 +145,17 @@ const promises: Promise[] = [
 
 const PromiseSection = () => {
     return (
-        <section className="bg-primary py-16 md:py-24" aria-labelledby="belofte-titel">
+        <section className="bg-[#F2F2F2] py-16 md:py-24" aria-labelledby="belofte-titel">
             <div className="mx-auto max-w-container px-4 md:px-8">
                 <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-                    <p className="text-sm font-semibold text-brand-secondary md:text-md">Wat u krijgt</p>
+                    <p className="text-sm font-bold tracking-wider text-black uppercase md:text-md">Wat u krijgt</p>
                     <h2
                         id="belofte-titel"
-                        className="mt-3 text-display-sm font-semibold text-balance text-primary md:text-display-md"
+                        className="mt-3 text-display-sm font-semibold text-balance text-black md:text-display-md"
                     >
-                        Een premium poolhouse, op maat van uw woning ontworpen en in eigen atelier gebouwd.
+                        Een <strong className="font-black">premium</strong> poolhouse, op <strong className="font-black">maat</strong> van uw woning ontworpen en in <strong className="font-black">eigen atelier</strong> gebouwd.
                     </h2>
-                    <p className="mt-4 text-lg text-tertiary md:mt-5 md:text-xl">
+                    <p className="mt-4 text-lg text-black md:mt-5 md:text-xl">
                         Geen vijf aannemers op uw terrein. Geen ontwerper die naar een uitvoerder doorverwijst. Eén team, één
                         prijsafspraak, één verantwoordelijke partner — ook jaren na de plaatsing.
                     </p>
@@ -163,12 +163,12 @@ const PromiseSection = () => {
 
                 <ul className="mt-12 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-3">
                     {promises.map((item) => (
-                        <li key={item.title} className="flex flex-col items-start">
-                            <div className="flex size-12 items-center justify-center rounded-full bg-utility-brand-100_alt text-fg-brand-secondary">
+                        <li key={item.title} className="flex flex-col items-start rounded-2xl bg-white p-6 md:p-8">
+                            <div className="flex size-12 items-center justify-center rounded-full bg-[#C19848] text-white">
                                 <item.icon className="size-6" />
                             </div>
-                            <h3 className="mt-5 text-lg font-semibold text-primary md:text-xl">{item.title}</h3>
-                            <p className="mt-2 text-md text-tertiary">{item.body}</p>
+                            <h3 className="mt-5 text-lg font-bold text-black md:text-xl">{item.title}</h3>
+                            <p className="mt-2 text-md text-black">{item.body}</p>
                         </li>
                     ))}
                 </ul>
@@ -243,11 +243,11 @@ const RoundButton = ({
         {...props}
         color="link-gray"
         className={cx(
-            "group flex size-12 items-center justify-center rounded-full bg-primary ring-1 ring-secondary backdrop-blur transition duration-100 ease-linear ring-inset hover:bg-secondary md:size-14",
+            "group flex size-12 items-center justify-center rounded-full bg-white ring-1 ring-black/15 backdrop-blur transition duration-100 ease-linear ring-inset hover:bg-[#F2F2F2] md:size-14",
             className,
         )}
     >
-        <Icon className="size-5 text-fg-quaternary transition-inherit-all group-hover:text-fg-quaternary_hover md:size-6" />
+        <Icon className="size-5 text-black transition-inherit-all md:size-6" />
     </Button>
 );
 
@@ -255,17 +255,17 @@ const RealisatiesSection = () => {
     return (
         <section
             id="realisaties"
-            className="overflow-hidden bg-primary py-16 md:py-24"
+            className="overflow-hidden bg-white py-16 md:py-24"
             aria-labelledby="realisaties-titel"
         >
             <div className="mx-auto max-w-container px-4 md:px-8">
                 <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end lg:gap-12">
                     <div className="flex max-w-3xl flex-col gap-4">
-                        <p className="text-sm font-semibold text-brand-secondary md:text-md">Realisaties</p>
-                        <h2 id="realisaties-titel" className="text-display-sm font-semibold text-balance text-primary md:text-display-md">
-                            Elk project ontworpen op maat van de woning.
+                        <p className="text-sm font-bold tracking-wider text-black uppercase md:text-md">Realisaties</p>
+                        <h2 id="realisaties-titel" className="text-display-sm font-semibold text-balance text-black md:text-display-md">
+                            Elk project ontworpen op <strong className="font-black">maat</strong> van de woning.
                         </h2>
-                        <p className="text-lg text-tertiary md:text-xl">
+                        <p className="text-lg text-black md:text-xl">
                             Een greep uit onze recent gerealiseerde poolhouses — modern, klassiek of een combinatie van beide.
                         </p>
                     </div>
@@ -280,7 +280,7 @@ const RealisatiesSection = () => {
                         {projects.map((project) => (
                             <Carousel.Item
                                 key={project.id}
-                                className="group relative flex h-118 max-w-76 shrink-0 cursor-grab items-end overflow-hidden rounded-2xl bg-quaternary md:h-126 md:w-full md:max-w-sm"
+                                className="group relative flex h-118 max-w-76 shrink-0 cursor-grab items-end overflow-hidden rounded-2xl bg-[#F2F2F2] md:h-126 md:w-full md:max-w-sm"
                             >
                                 <img
                                     src={project.image}
@@ -290,11 +290,11 @@ const RealisatiesSection = () => {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
                                 <div className="relative flex w-full flex-col gap-3 p-6 md:p-8">
-                                    <span className="self-start rounded-full bg-white/15 px-3 py-1 text-xs font-semibold text-white ring-1 ring-white/20 backdrop-blur-sm ring-inset">
+                                    <span className="self-start rounded-full bg-[#C19848] px-3 py-1 text-xs font-bold text-white">
                                         {project.tag}
                                     </span>
-                                    <p className="text-display-xs font-semibold text-white md:text-display-sm">{project.title}</p>
-                                    <p className="text-md text-white/85">{project.subtitle}</p>
+                                    <p className="text-display-xs font-bold text-white md:text-display-sm">{project.title}</p>
+                                    <p className="text-md text-white/90">{project.subtitle}</p>
                                 </div>
                             </Carousel.Item>
                         ))}
@@ -323,11 +323,13 @@ const pillars: Pillar[] = [
         body: (
             <>
                 <p>
-                    Ostyn is sinds <strong>1992</strong> een familiebedrijf, opgericht door <strong>Yvan Ostyn</strong> en vandaag
-                    voortgezet door zijn zonen <strong>Thomas</strong> en <strong>Laurens</strong>. Sinds 2023 brengen we{" "}
-                    <strong>Veranclassic</strong> en <strong>Poolhouse Plaza</strong> samen onder één naam.
+                    Ostyn is sinds <strong className="font-bold">1992</strong> een familiebedrijf, opgericht door{" "}
+                    <strong className="font-bold">Yvan Ostyn</strong> en vandaag voortgezet door zijn zonen{" "}
+                    <strong className="font-bold">Thomas</strong> en <strong className="font-bold">Laurens</strong>. Sinds 2023
+                    brengen we <strong className="font-bold">Veranclassic</strong> en <strong className="font-bold">Poolhouse Plaza</strong>{" "}
+                    samen onder één naam.
                 </p>
-                <p className="mt-3 text-sm text-quaternary italic md:text-md">
+                <p className="mt-3 text-sm italic text-black/70 md:text-md">
                     &ldquo;Alles blijft hetzelfde, behalve de naam.&rdquo;
                 </p>
             </>
@@ -339,9 +341,9 @@ const pillars: Pillar[] = [
         title: "Eigen atelier",
         body: (
             <p>
-                Elke poolhouse wordt door <strong>onze eigen vaklui</strong> gebouwd in ons atelier in{" "}
-                <strong>Dottenijs</strong>. Geen onderaanneming, geen tussenpartij. Eén keten van verantwoordelijkheid — van eerste
-                schets tot laatste schroef.
+                Elke poolhouse wordt door <strong className="font-bold">onze eigen vaklui</strong> gebouwd in ons atelier in{" "}
+                <strong className="font-bold">Dottenijs</strong>. Geen onderaanneming, geen tussenpartij. Eén keten van
+                verantwoordelijkheid — van eerste schets tot laatste schroef.
             </p>
         ),
     },
@@ -351,9 +353,9 @@ const pillars: Pillar[] = [
         title: "3.000 m² showroom",
         body: (
             <p>
-                De <strong>grootste overdekte showroom</strong> voor tuinconstructies in België en Noord-Frankrijk.{" "}
-                <strong>Zeven dagen op zeven</strong> open — ook tijdens weekends en feestdagen. Materialen bekijkt u op ware
-                grootte, naast elkaar.
+                De <strong className="font-bold">grootste overdekte showroom</strong> voor tuinconstructies in België en
+                Noord-Frankrijk. <strong className="font-bold">Zeven dagen op zeven</strong> open — ook tijdens weekends en
+                feestdagen. Materialen bekijkt u op ware grootte, naast elkaar.
             </p>
         ),
     },
@@ -361,12 +363,12 @@ const pillars: Pillar[] = [
 
 const WaaromSection = () => {
     return (
-        <section id="waarom" className="bg-utility-brand-50_alt py-16 md:py-24" aria-labelledby="waarom-titel">
+        <section id="waarom" className="bg-[#F2F2F2] py-16 md:py-24" aria-labelledby="waarom-titel">
             <div className="mx-auto max-w-container px-4 md:px-8">
                 <div className="flex max-w-3xl flex-col gap-4 md:gap-5">
-                    <p className="text-sm font-semibold text-brand-secondary md:text-md">Waarom Ostyn</p>
-                    <h2 id="waarom-titel" className="text-display-sm font-semibold text-balance text-brand-primary md:text-display-md">
-                        Drie redenen waarom pooleigenaars voor ons kiezen.
+                    <p className="text-sm font-bold tracking-wider text-black uppercase md:text-md">Waarom Ostyn</p>
+                    <h2 id="waarom-titel" className="text-display-sm font-semibold text-balance text-black md:text-display-md">
+                        Drie redenen waarom <strong className="font-black">pooleigenaars</strong> voor ons kiezen.
                     </h2>
                 </div>
 
@@ -374,16 +376,16 @@ const WaaromSection = () => {
                     {pillars.map((p) => (
                         <li
                             key={p.title}
-                            className="flex flex-col items-start gap-5 rounded-2xl bg-primary p-6 ring-1 ring-secondary ring-inset md:p-8"
+                            className="flex flex-col items-start gap-5 rounded-2xl bg-white p-6 md:p-8"
                         >
-                            <div className="flex size-12 items-center justify-center rounded-xl bg-utility-brand-100_alt text-fg-brand-secondary">
+                            <div className="flex size-12 items-center justify-center rounded-xl bg-[#C19848] text-white">
                                 <p.icon className="size-6" />
                             </div>
                             <div>
-                                <p className="text-xs font-semibold tracking-wider text-brand-secondary uppercase">{p.eyebrow}</p>
-                                <h3 className="mt-1 text-xl font-semibold text-primary md:text-display-xs">{p.title}</h3>
+                                <p className="text-xs font-bold tracking-wider text-black uppercase">{p.eyebrow}</p>
+                                <h3 className="mt-1 text-xl font-bold text-black md:text-display-xs">{p.title}</h3>
                             </div>
-                            <div className="text-md text-tertiary">{p.body}</div>
+                            <div className="text-md text-black">{p.body}</div>
                         </li>
                     ))}
                 </ul>
@@ -423,14 +425,14 @@ const steps: Step[] = [
 
 const ProcesSection = () => {
     return (
-        <section id="proces" className="bg-primary py-16 md:py-24" aria-labelledby="proces-titel">
+        <section id="proces" className="bg-white py-16 md:py-24" aria-labelledby="proces-titel">
             <div className="mx-auto max-w-container px-4 md:px-8">
                 <div className="flex max-w-3xl flex-col gap-4 md:gap-5">
-                    <p className="text-sm font-semibold text-brand-secondary md:text-md">Hoe werkt het</p>
-                    <h2 id="proces-titel" className="text-display-sm font-semibold text-balance text-primary md:text-display-md">
-                        Van eerste gesprek tot oplevering — zonder verrassingen.
+                    <p className="text-sm font-bold tracking-wider text-black uppercase md:text-md">Hoe werkt het</p>
+                    <h2 id="proces-titel" className="text-display-sm font-semibold text-balance text-black md:text-display-md">
+                        Van eerste gesprek tot oplevering — <strong className="font-black">zonder verrassingen</strong>.
                     </h2>
-                    <p className="text-lg text-tertiary md:text-xl">
+                    <p className="text-lg text-black md:text-xl">
                         U weet vooraf hoe uw poolhouse eruit ziet, wat het kost, en wanneer het klaar is. De afgesproken prijs houdt
                         stand.
                     </p>
@@ -440,27 +442,27 @@ const ProcesSection = () => {
                     {steps.map((step, index) => (
                         <li key={step.num} className="relative flex flex-col gap-4">
                             <div className="flex items-center gap-4 lg:flex-col lg:items-start">
-                                <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-utility-brand-100_alt text-md font-semibold text-fg-brand-secondary md:size-14 md:text-lg">
+                                <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#C19848] text-md font-bold text-white md:size-14 md:text-lg">
                                     {step.num}
                                 </span>
                                 {index < steps.length - 1 && (
-                                    <span aria-hidden="true" className="hidden h-px flex-1 bg-utility-brand-200 lg:block" />
+                                    <span aria-hidden="true" className="hidden h-px flex-1 bg-black/15 lg:block" />
                                 )}
                             </div>
                             <div>
-                                <h3 className="text-lg font-semibold text-primary md:text-xl">{step.title}</h3>
-                                <p className="mt-2 text-md text-tertiary">{step.body}</p>
+                                <h3 className="text-lg font-bold text-black md:text-xl">{step.title}</h3>
+                                <p className="mt-2 text-md text-black">{step.body}</p>
                             </div>
                         </li>
                     ))}
                 </ol>
 
-                <div className="mt-12 flex flex-col gap-4 rounded-2xl bg-utility-brand-50_alt p-6 md:flex-row md:items-center md:justify-between md:p-8">
+                <div className="mt-12 flex flex-col gap-4 rounded-2xl bg-[#F2F2F2] p-6 md:flex-row md:items-center md:justify-between md:p-8">
                     <div className="flex items-start gap-4">
-                        <Clock className="mt-0.5 size-6 shrink-0 text-fg-brand-secondary" />
-                        <p className="text-md text-brand-primary">
-                            <strong>Typische doorlooptijd: 3 tot 6 maanden</strong> van getekende offerte tot oplevering. We bevestigen
-                            de planning bij de offerte; per project kan dit licht variëren.
+                        <Clock className="mt-0.5 size-6 shrink-0 text-[#C19848]" />
+                        <p className="text-md text-black">
+                            <strong className="font-bold">Typische doorlooptijd: 3 tot 6 maanden</strong> van getekende offerte tot
+                            oplevering. We bevestigen de planning bij de offerte; per project kan dit licht variëren.
                         </p>
                     </div>
                     <Button href="#offerte" size="lg" iconTrailing={ArrowRight} className="shrink-0">
@@ -493,17 +495,17 @@ const testimonials: Testimonial[] = [
 
 const TestimonialsSection = () => {
     return (
-        <section className="bg-utility-brand-50_alt py-16 md:py-24" aria-labelledby="getuigenissen-titel">
+        <section className="bg-[#F2F2F2] py-16 md:py-24" aria-labelledby="getuigenissen-titel">
             <div className="mx-auto max-w-container px-4 md:px-8">
                 <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
                     <div className="flex gap-1">
                         {Array.from({ length: 5 }).map((_, i) => (
-                            <Star01 key={i} className="size-5 fill-fg-brand-secondary text-fg-brand-secondary" />
+                            <Star01 key={i} className="size-5 fill-[#C19848] text-[#C19848]" />
                         ))}
                     </div>
                     <h2
                         id="getuigenissen-titel"
-                        className="mt-4 text-display-sm font-semibold text-balance text-brand-primary md:text-display-md"
+                        className="mt-4 text-display-sm font-semibold text-balance text-black md:text-display-md"
                     >
                         Wat onze klanten zeggen.
                     </h2>
@@ -513,19 +515,19 @@ const TestimonialsSection = () => {
                     {testimonials.map((t) => (
                         <li
                             key={t.author}
-                            className="flex flex-col gap-6 rounded-2xl bg-primary p-6 ring-1 ring-secondary ring-inset md:p-8"
+                            className="flex flex-col gap-6 rounded-2xl bg-white p-6 md:p-8"
                         >
                             <div className="flex gap-1">
                                 {Array.from({ length: 5 }).map((_, i) => (
-                                    <Star01 key={i} className="size-4 fill-fg-brand-secondary text-fg-brand-secondary" />
+                                    <Star01 key={i} className="size-4 fill-[#C19848] text-[#C19848]" />
                                 ))}
                             </div>
-                            <blockquote className="flex-1 text-lg font-medium text-balance text-primary md:text-xl">
+                            <blockquote className="flex-1 text-lg font-medium text-balance text-black md:text-xl">
                                 <p>&ldquo;{t.quote}&rdquo;</p>
                             </blockquote>
-                            <footer className="text-sm text-tertiary">
-                                <span className="font-semibold text-primary">— {t.author}</span>
-                                <span className="ml-1 text-quaternary">· {t.project}</span>
+                            <footer className="text-sm text-black/70">
+                                <span className="font-bold text-black">— {t.author}</span>
+                                <span className="ml-1">· {t.project}</span>
                             </footer>
                         </li>
                     ))}
@@ -544,22 +546,22 @@ const aftercareItems = [
 
 const NazorgSection = () => {
     return (
-        <section className="bg-primary py-16 md:py-24" aria-labelledby="nazorg-titel">
+        <section className="bg-white py-16 md:py-24" aria-labelledby="nazorg-titel">
             <div className="mx-auto max-w-container px-4 md:px-8">
                 <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
                     <div className="flex max-w-2xl flex-col gap-4 md:gap-5">
-                        <p className="text-sm font-semibold text-brand-secondary md:text-md">Nazorg</p>
+                        <p className="text-sm font-bold tracking-wider text-black uppercase md:text-md">Nazorg</p>
                         <h2
                             id="nazorg-titel"
-                            className="text-display-sm font-semibold text-balance text-primary md:text-display-md"
+                            className="text-display-sm font-semibold text-balance text-black md:text-display-md"
                         >
-                            Ons werk stopt niet bij de oplevering.
+                            Ons werk stopt <strong className="font-black">niet</strong> bij de oplevering.
                         </h2>
-                        <p className="text-lg text-tertiary md:text-xl">
+                        <p className="text-lg text-black md:text-xl">
                             Een poolhouse is een investering voor decennia. U mag verwachten dat de partner die hem bouwt, er ook
                             over tien jaar nog is.
                         </p>
-                        <p className="mt-2 text-md text-quaternary">
+                        <p className="mt-2 text-md text-black/70">
                             Eerlijk gezegd: premium materialen zoals Afrormosia hardhout en Trespa zijn duurzaam, maar vragen
                             onderhoud. We zijn daar open over en bezorgen u onze onderhoudsgids bij de oplevering.
                         </p>
@@ -568,10 +570,10 @@ const NazorgSection = () => {
                     <ul className="flex flex-col gap-5">
                         {aftercareItems.map((item) => (
                             <li key={item} className="flex items-start gap-4">
-                                <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-utility-brand-100_alt">
-                                    <CheckCircle className="size-5 text-fg-brand-secondary" />
+                                <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-[#C19848]">
+                                    <CheckCircle className="size-5 text-white" />
                                 </span>
-                                <p className="text-md text-secondary md:text-lg">{item}</p>
+                                <p className="text-md text-black md:text-lg">{item}</p>
                             </li>
                         ))}
                     </ul>
@@ -583,24 +585,24 @@ const NazorgSection = () => {
 
 const ShowroomSection = () => {
     return (
-        <section id="showroom" className="bg-utility-gray-900 py-16 md:py-24" aria-labelledby="showroom-titel">
+        <section id="showroom" className="bg-[#C19848] py-16 md:py-24" aria-labelledby="showroom-titel">
             <div className="mx-auto grid max-w-container grid-cols-1 gap-12 px-4 md:px-8 lg:grid-cols-2 lg:items-center lg:gap-16">
                 <div className="flex flex-col">
-                    <p className="text-sm font-semibold text-fg-brand-secondary_alt md:text-md">Showroom</p>
-                    <h2 id="showroom-titel" className="mt-3 text-display-sm font-semibold text-balance text-white md:text-display-md">
-                        Kom langs in Dottenijs.
+                    <p className="text-sm font-bold tracking-wider text-black uppercase md:text-md">Showroom</p>
+                    <h2 id="showroom-titel" className="mt-3 text-display-sm font-semibold text-balance text-black md:text-display-md">
+                        Kom langs in <strong className="font-black">Dottenijs</strong>.
                     </h2>
-                    <p className="mt-4 text-lg text-white/75 md:mt-5 md:text-xl">
-                        <strong>3.000 m² overdekt</strong>, zeven dagen op zeven open. Poolhouses, veranda&apos;s, carports en
-                        tuinkamers op ware grootte. Materialen die u kunt voelen — Afrormosia, Trespa, Aquapanel.
+                    <p className="mt-4 text-lg text-black md:mt-5 md:text-xl">
+                        <strong className="font-bold">3.000 m² overdekt</strong>, zeven dagen op zeven open. Poolhouses, veranda&apos;s,
+                        carports en tuinkamers op ware grootte. Materialen die u kunt voelen — Afrormosia, Trespa, Aquapanel.
                     </p>
-                    <ul className="mt-8 flex flex-col gap-4 text-md text-white/85">
+                    <ul className="mt-8 flex flex-col gap-4 text-md text-black">
                         <li className="flex items-start gap-3">
-                            <MarkerPin01 className="mt-0.5 size-5 shrink-0 text-fg-brand-secondary_alt" />
+                            <MarkerPin01 className="mt-0.5 size-5 shrink-0 text-black" />
                             <span>Engelse Wandeling 2, 7711 Dottenijs (Mouscron)</span>
                         </li>
                         <li className="flex items-start gap-3">
-                            <Calendar className="mt-0.5 size-5 shrink-0 text-fg-brand-secondary_alt" />
+                            <Calendar className="mt-0.5 size-5 shrink-0 text-black" />
                             <span>7 dagen op 7 open — ook tijdens weekends en feestdagen</span>
                         </li>
                     </ul>
@@ -608,23 +610,23 @@ const ShowroomSection = () => {
                         <Button href="#inspiratieboek" color="secondary" size="xl" iconTrailing={ArrowUpRight}>
                             Download het inspiratieboek
                         </Button>
-                        <Button href="#offerte" size="xl" iconTrailing={ArrowRight}>
+                        <Button href="#offerte" size="xl" iconTrailing={ArrowRight} className="!bg-black !text-white hover:!bg-black/85">
                             Vraag uw offerte aan
                         </Button>
                     </div>
                 </div>
 
                 <div className="relative">
-                    <div className="overflow-hidden rounded-2xl ring-1 ring-white/10 ring-inset">
+                    <div className="overflow-hidden rounded-2xl">
                         <img
                             src="https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?w=1200&h=900&fit=crop&q=80"
                             alt="Ostyn showroom in Dottenijs"
                             className="aspect-[4/3] w-full object-cover"
                         />
                     </div>
-                    <div className="absolute -right-4 -bottom-4 hidden flex-col gap-1 rounded-2xl bg-primary px-6 py-4 shadow-2xl md:flex">
-                        <p className="text-display-xs font-semibold text-primary">3.000 m²</p>
-                        <p className="text-sm font-medium text-tertiary">overdekte showroom</p>
+                    <div className="absolute -right-4 -bottom-4 hidden flex-col gap-1 rounded-2xl bg-white px-6 py-4 shadow-2xl md:flex">
+                        <p className="text-display-xs font-bold text-black">3.000 m²</p>
+                        <p className="text-sm font-medium text-black/70">overdekte showroom</p>
                     </div>
                 </div>
             </div>
@@ -634,41 +636,41 @@ const ShowroomSection = () => {
 
 const OfferteSection = () => {
     return (
-        <section id="offerte" className="bg-utility-brand-50_alt py-16 md:py-24" aria-labelledby="cta-titel">
+        <section id="offerte" className="bg-[#F2F2F2] py-16 md:py-24" aria-labelledby="cta-titel">
             <div className="mx-auto grid max-w-container grid-cols-1 gap-12 px-4 md:px-8 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
                 <div className="flex flex-col gap-4 lg:sticky lg:top-28 lg:self-start">
-                    <p className="text-sm font-semibold text-brand-secondary md:text-md">Offerte aanvragen</p>
-                    <h2 id="cta-titel" className="text-display-sm font-semibold text-balance text-brand-primary md:text-display-md">
-                        Klaar om uw poolhouse concreet te maken?
+                    <p className="text-sm font-bold tracking-wider text-black uppercase md:text-md">Offerte aanvragen</p>
+                    <h2 id="cta-titel" className="text-display-sm font-semibold text-balance text-black md:text-display-md">
+                        Klaar om uw poolhouse <strong className="font-black">concreet</strong> te maken?
                     </h2>
-                    <p className="text-lg text-tertiary md:text-xl">
-                        Vraag uw <strong>gratis offerte</strong> aan voor uw poolhouse. Vrijblijvend, zonder verkoopdruk, met
-                        antwoord binnen 2 werkdagen.
+                    <p className="text-lg text-black md:text-xl">
+                        Vraag uw <strong className="font-bold">gratis offerte</strong> aan voor uw poolhouse. Vrijblijvend, zonder
+                        verkoopdruk, met antwoord binnen 2 werkdagen.
                     </p>
 
-                    <ul className="mt-4 flex flex-col gap-3 text-md text-secondary">
+                    <ul className="mt-4 flex flex-col gap-3 text-md text-black">
                         <li className="flex items-start gap-3">
-                            <Check className="mt-0.5 size-5 shrink-0 text-fg-brand-secondary" />
+                            <Check className="mt-0.5 size-5 shrink-0 text-[#C19848]" />
                             <span>Vrijblijvend, geen verkoopdruk</span>
                         </li>
                         <li className="flex items-start gap-3">
-                            <Check className="mt-0.5 size-5 shrink-0 text-fg-brand-secondary" />
+                            <Check className="mt-0.5 size-5 shrink-0 text-[#C19848]" />
                             <span>Antwoord binnen 2 werkdagen</span>
                         </li>
                         <li className="flex items-start gap-3">
-                            <Check className="mt-0.5 size-5 shrink-0 text-fg-brand-secondary" />
+                            <Check className="mt-0.5 size-5 shrink-0 text-[#C19848]" />
                             <span>Gratis 3D-ontwerp bij ondertekening</span>
                         </li>
                     </ul>
 
-                    <div className="mt-6 flex flex-col gap-3 border-t border-secondary pt-6 text-md text-secondary">
-                        <a href="tel:+3256480480" className="flex items-center gap-3 text-brand-primary hover:text-brand-primary_hover">
-                            <Phone className="size-5 text-fg-brand-secondary" />
-                            <span className="font-semibold">+32 56 48 04 80</span>
+                    <div className="mt-6 flex flex-col gap-3 border-t border-black/10 pt-6 text-md text-black">
+                        <a href="tel:+3256480480" className="flex items-center gap-3 hover:opacity-80">
+                            <Phone className="size-5 text-[#C19848]" />
+                            <span className="font-bold">+32 56 48 04 80</span>
                         </a>
-                        <a href="mailto:info@ostyn.be" className="flex items-center gap-3 text-brand-primary hover:text-brand-primary_hover">
-                            <Mail01 className="size-5 text-fg-brand-secondary" />
-                            <span className="font-semibold">info@ostyn.be</span>
+                        <a href="mailto:info@ostyn.be" className="flex items-center gap-3 hover:opacity-80">
+                            <Mail01 className="size-5 text-[#C19848]" />
+                            <span className="font-bold">info@ostyn.be</span>
                         </a>
                     </div>
                 </div>
@@ -676,7 +678,7 @@ const OfferteSection = () => {
                 <form
                     action="#"
                     method="post"
-                    className="flex flex-col gap-5 rounded-2xl bg-primary p-6 ring-1 ring-secondary ring-inset md:p-8"
+                    className="flex flex-col gap-5 rounded-2xl bg-white p-6 md:p-8"
                 >
                     <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                         <Input label="Voornaam" name="voornaam" placeholder="Voornaam" autoComplete="given-name" isRequired />
@@ -702,13 +704,13 @@ const OfferteSection = () => {
                         name="privacy"
                         isRequired
                         label={
-                            <span className="text-sm text-tertiary">
+                            <span className="text-sm text-black">
                                 Ik ga akkoord met de verwerking van mijn gegevens volgens de{" "}
                                 <a
                                     href="https://ostyn.be/privacy"
                                     target="_blank"
                                     rel="noopener"
-                                    className="font-semibold text-brand-secondary underline-offset-4 hover:underline"
+                                    className="font-bold text-black underline underline-offset-4"
                                 >
                                     privacyverklaring
                                 </a>
@@ -719,19 +721,19 @@ const OfferteSection = () => {
                     <Button type="submit" size="xl" iconTrailing={Send01} className="mt-2">
                         Vraag uw gratis offerte aan
                     </Button>
-                    <p className="text-center text-sm text-quaternary">
+                    <p className="text-center text-sm text-black/70">
                         Vrijblijvend · Geen verkoopdruk · Antwoord binnen 2 werkdagen
                     </p>
                 </form>
             </div>
 
-            <p id="inspiratieboek" className="mx-auto mt-12 max-w-container px-4 text-center text-md text-tertiary md:px-8">
+            <p id="inspiratieboek" className="mx-auto mt-12 max-w-container px-4 text-center text-md text-black md:px-8">
                 Liever eerst wat inspiratie?{" "}
                 <a
                     href="https://ostyn.be/inspiratieboek"
                     target="_blank"
                     rel="noopener"
-                    className="font-semibold text-brand-secondary underline-offset-4 hover:underline"
+                    className="font-bold text-black underline underline-offset-4"
                 >
                     Download het inspiratieboek →
                 </a>
@@ -768,27 +770,27 @@ const footerCols = [
 
 const OstynFooter = () => {
     return (
-        <footer className="bg-utility-gray-900 py-12 md:pt-16 md:pb-12">
+        <footer className="bg-white py-12 md:pt-16 md:pb-12">
             <div className="mx-auto max-w-container px-4 md:px-8">
-                <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
+                <div className="grid grid-cols-1 gap-12 border-t border-black/10 pt-12 md:grid-cols-2 lg:grid-cols-4">
                     <div className="flex flex-col gap-4">
-                        <img src="/logo-text.svg" alt="Ostyn" className="h-9 w-auto brightness-0 invert" />
-                        <p className="max-w-xs text-md text-white/70">
+                        <img src="/logo-text.svg" alt="Ostyn" className="h-9 w-auto" />
+                        <p className="max-w-xs text-md text-black">
                             Specialist in tuinconstructies, woonuitbreidingen en poolhouses. Sinds 1992.
                         </p>
                     </div>
                     {footerCols.map((col) => (
                         <div key={col.label} className="flex flex-col gap-4">
-                            <h4 className="text-sm font-semibold text-fg-brand-secondary_alt">{col.label}</h4>
+                            <h4 className="text-sm font-bold tracking-wider text-black uppercase">{col.label}</h4>
                             <ul className="flex flex-col gap-2">
                                 {col.items.map((item) => (
-                                    <li key={item.label} className="text-md text-white/75">
+                                    <li key={item.label} className="text-md text-black">
                                         {item.href ? (
                                             <a
                                                 href={item.href}
                                                 target={item.href.startsWith("http") ? "_blank" : undefined}
                                                 rel={item.href.startsWith("http") ? "noopener" : undefined}
-                                                className="hover:text-white"
+                                                className="hover:opacity-70"
                                             >
                                                 {item.label}
                                             </a>
@@ -802,21 +804,21 @@ const OstynFooter = () => {
                     ))}
                 </div>
 
-                <div className="mt-12 flex flex-col justify-between gap-4 border-t border-white/10 pt-8 md:flex-row md:items-center">
-                    <p className="text-sm text-white/60">
+                <div className="mt-12 flex flex-col justify-between gap-4 border-t border-black/10 pt-8 md:flex-row md:items-center">
+                    <p className="text-sm text-black/70">
                         © {new Date().getFullYear()} Ostyn — voorheen Veranclassic &amp; Poolhouse Plaza.
                     </p>
-                    <div className="flex gap-4 text-sm text-white/60">
-                        <a href="#realisaties" className="hover:text-white">
+                    <div className="flex gap-4 text-sm text-black/70">
+                        <a href="#realisaties" className="hover:text-black">
                             Realisaties
                         </a>
-                        <a href="#waarom" className="hover:text-white">
+                        <a href="#waarom" className="hover:text-black">
                             Waarom Ostyn
                         </a>
-                        <a href="#proces" className="hover:text-white">
+                        <a href="#proces" className="hover:text-black">
                             Proces
                         </a>
-                        <a href="#showroom" className="hover:text-white">
+                        <a href="#showroom" className="hover:text-black">
                             Showroom
                         </a>
                     </div>
@@ -828,7 +830,7 @@ const OstynFooter = () => {
 
 const LandingPage17 = () => {
     return (
-        <div className="bg-primary">
+        <div className="bg-white">
             <OstynHeader />
             <main id="hoofdinhoud">
                 <HeroSection />
