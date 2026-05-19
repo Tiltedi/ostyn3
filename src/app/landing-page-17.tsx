@@ -106,7 +106,7 @@ const HeroSection = () => {
                         Een <strong className="font-extrabold">poolhouse op maat</strong>, in <strong className="font-extrabold">eigen atelier</strong> gebouwd. Klaar binnen{" "}
                         <strong className="font-extrabold">3 tot 6 maanden</strong>.
                     </h1>
-                    <p className="mt-5 max-w-2xl text-lg text-white/85 md:mt-6 md:text-xl">
+                    <p className="mt-5 max-w-2xl text-lg text-white/85 md:mt-6">
                         Eén team van ontwerp tot oplevering. Eén afspraak over de prijs. Eén partner die ook na de plaatsing voor u klaarstaat.
                     </p>
                     <div className="mt-8 flex flex-col-reverse items-stretch gap-3 sm:flex-row sm:items-start md:mt-10">
@@ -163,7 +163,7 @@ const PromiseSection = () => {
                     >
                         Een <strong className="font-extrabold">premium</strong> poolhouse, op <strong className="font-extrabold">maat</strong> van uw woning ontworpen en in <strong className="font-extrabold">eigen atelier</strong> gebouwd.
                     </h2>
-                    <p className="mt-4 text-lg text-black md:mt-5 md:text-xl">
+                    <p className="mt-4 text-lg text-black md:mt-5">
                         Geen vijf aannemers op uw terrein. Geen ontwerper die naar een uitvoerder doorverwijst. Eén team, één
                         prijsafspraak, één verantwoordelijke partner — ook jaren na de plaatsing.
                     </p>
@@ -175,7 +175,7 @@ const PromiseSection = () => {
                             <div className="flex size-12 items-center justify-center rounded-full bg-[#C19848] text-white">
                                 <item.icon className="size-6" />
                             </div>
-                            <h3 className="mt-5 text-lg font-semibold text-black md:text-xl">{item.title}</h3>
+                            <h3 className="mt-5 text-xl font-semibold text-black md:text-display-xs">{item.title}</h3>
                             <p className="mt-2 text-md text-black">{item.body}</p>
                         </li>
                     ))}
@@ -273,7 +273,7 @@ const RealisatiesSection = () => {
                         <h2 id="realisaties-titel" className="text-display-sm font-medium text-balance text-black md:text-display-md">
                             Elk project ontworpen op <strong className="font-extrabold">maat</strong> van de woning.
                         </h2>
-                        <p className="text-lg text-black md:text-xl">
+                        <p className="text-lg text-black">
                             Een greep uit onze recent gerealiseerde poolhouses — modern, klassiek of een combinatie van beide.
                         </p>
                     </div>
@@ -440,7 +440,7 @@ const ProcesSection = () => {
                     <h2 id="proces-titel" className="text-display-sm font-medium text-balance text-black md:text-display-md">
                         Van eerste gesprek tot oplevering — <strong className="font-extrabold">zonder verrassingen</strong>.
                     </h2>
-                    <p className="text-lg text-black md:text-xl">
+                    <p className="text-lg text-black">
                         U weet vooraf hoe uw poolhouse eruit ziet, wat het kost, en wanneer het klaar is. De afgesproken prijs houdt
                         stand.
                     </p>
@@ -458,7 +458,7 @@ const ProcesSection = () => {
                                 )}
                             </div>
                             <div>
-                                <h3 className="text-lg font-semibold text-black md:text-xl">{step.title}</h3>
+                                <h3 className="text-xl font-semibold text-black md:text-display-xs">{step.title}</h3>
                                 <p className="mt-2 text-md text-black">{step.body}</p>
                             </div>
                         </li>
@@ -565,7 +565,7 @@ const NazorgSection = () => {
                         >
                             Ons werk stopt <strong className="font-extrabold">niet</strong> bij de oplevering.
                         </h2>
-                        <p className="text-lg text-black md:text-xl">
+                        <p className="text-lg text-black">
                             Een poolhouse is een investering voor decennia. U mag verwachten dat de partner die hem bouwt, er ook
                             over tien jaar nog is.
                         </p>
@@ -600,7 +600,7 @@ const ShowroomSection = () => {
                     <h2 id="showroom-titel" className="mt-3 text-display-sm font-medium text-balance text-black md:text-display-md">
                         Kom langs in <strong className="font-extrabold">Dottenijs</strong>.
                     </h2>
-                    <p className="mt-4 text-lg text-black md:mt-5 md:text-xl">
+                    <p className="mt-4 text-lg text-black md:mt-5">
                         <strong className="font-semibold">3.000 m² overdekt</strong>, zeven dagen op zeven open. Poolhouses, veranda&apos;s,
                         carports en tuinkamers op ware grootte. Materialen die u kunt voelen — Afrormosia, Trespa, Aquapanel.
                     </p>
@@ -651,7 +651,7 @@ const OfferteSection = () => {
                     <h2 id="cta-titel" className="text-display-sm font-medium text-balance text-black md:text-display-md">
                         Klaar om uw poolhouse <strong className="font-extrabold">concreet</strong> te maken?
                     </h2>
-                    <p className="text-lg text-black md:text-xl">
+                    <p className="text-lg text-black">
                         Vraag uw <strong className="font-semibold">gratis offerte</strong> aan voor uw poolhouse. Vrijblijvend, zonder
                         verkoopdruk, met antwoord binnen 2 werkdagen.
                     </p>
