@@ -137,6 +137,11 @@ Marketing landing page for **Ostyn**, a Belgian premium poolhouse company
 - `RealisatiesSection` 6 project photos: all Unsplash placeholders.
 - `ShowroomSection` image: served from `public/showroom.jpg` (real
   Ostyn adviesgesprek photo, 1200×1200 JPEG).
+- `TestimonialsSection` content: 3 real quotes (Devos, Palsterman,
+  Lechantre) + 6 plausible placeholders written in similar tone.
+  All 9 avatars are UntitledUI PRO stock photos via
+  `untitledui.com/images/avatars/*` — swap for real Ostyn
+  customer portraits when available.
 - `OfferteSection` form `action="#"` is a no-op — wire to the real
   endpoint when ready.
 

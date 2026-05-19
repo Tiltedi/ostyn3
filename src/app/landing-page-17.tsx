@@ -502,30 +502,84 @@ const ProcesSection = () => {
     );
 };
 
-type Testimonial = { quote: string; author: string; project: string };
-const testimonials: Testimonial[] = [
-    {
-        quote: "Een dikke pluim aan al uw medewerkers! Naar aanleiding van de aankoop van een poolhouse bij uw bedrijf, zouden wij toch een dikke pluim willen geven aan al uw medewerkers!",
-        author: "Familie Devos",
-        project: "poolhouse",
-    },
-    {
-        quote: "Ik heb zelden zulke bekwame, gedreven en vriendelijke vaklui aan het werk gezien!",
-        author: "Mr. Palsterman",
-        project: "garage",
-    },
-    {
-        quote: "We hadden gelijk om jullie bedrijf te vertrouwen.",
-        author: "Mr. & Mevr. Lechantre",
-        project: "carport",
-    },
+type Testimonial = { id: string; quote: string; author: string; project: string; avatar: string };
+const testimonialColumns: Testimonial[][] = [
+    [
+        {
+            id: "t-devos",
+            quote: "Een dikke pluim aan al uw medewerkers! Naar aanleiding van de aankoop van een poolhouse bij uw bedrijf, zouden wij toch een dikke pluim willen geven aan al uw medewerkers!",
+            author: "Familie Devos",
+            project: "Poolhouse · 2024",
+            avatar: "https://www.untitledui.com/images/avatars/nikolas-gibbons?fm=webp&q=80",
+        },
+        {
+            id: "t-vandeputte",
+            quote: "De Afrormosia hardhout veroudert prachtig. Onze tuin oogt nu als een vakantieresort, en de buren komen het regelmatig bewonderen.",
+            author: "Familie Vandeputte",
+            project: "Poolhouse · 2023",
+            avatar: "https://www.untitledui.com/images/avatars/owen-garcia?fm=webp&q=80",
+        },
+        {
+            id: "t-janssens",
+            quote: "Drie maanden van schets tot oplevering. Indrukwekkend hoe strak de planning werd nageleefd.",
+            author: "Mr. Janssens",
+            project: "Veranda · 2024",
+            avatar: "https://www.untitledui.com/images/avatars/stefan-sears?fm=webp&q=80",
+        },
+    ],
+    [
+        {
+            id: "t-palsterman",
+            quote: "Ik heb zelden zulke bekwame, gedreven en vriendelijke vaklui aan het werk gezien!",
+            author: "Mr. Palsterman",
+            project: "Garage · 2023",
+            avatar: "https://www.untitledui.com/images/avatars/marco-kelly?fm=webp&q=80",
+        },
+        {
+            id: "t-vermeulen",
+            quote: "Het 3D-ontwerp gaf ons echt vertrouwen om de stap te zetten. Het resultaat ziet er nog mooier uit dan op de tekening.",
+            author: "Familie Vermeulen",
+            project: "Poolhouse · 2024",
+            avatar: "https://www.untitledui.com/images/avatars/ammar-foley?fm=webp&q=80",
+        },
+        {
+            id: "t-cornelis",
+            quote: "We dachten dat een poolhouse op maat onbetaalbaar zou zijn. Bij Ostyn klopte de offerte tot op de euro — geen verrassingen achteraf.",
+            author: "Familie Cornelis",
+            project: "Poolhouse · 2023",
+            avatar: "https://www.untitledui.com/images/avatars/mathilde-lewis?fm=webp&q=80",
+        },
+    ],
+    [
+        {
+            id: "t-lechantre",
+            quote: "We hadden gelijk om jullie bedrijf te vertrouwen.",
+            author: "Mr. & Mevr. Lechantre",
+            project: "Carport · 2023",
+            avatar: "https://www.untitledui.com/images/avatars/zaid-schwartz?fm=webp&q=80",
+        },
+        {
+            id: "t-debacker",
+            quote: "Eén aanspreekpunt van begin tot eind. Geen enkele keer moest ik bellen voor een update — zij belden mij.",
+            author: "Mevr. De Backer",
+            project: "Pergola · 2024",
+            avatar: "https://www.untitledui.com/images/avatars/florence-shaw?fm=webp&q=80",
+        },
+        {
+            id: "t-verhoeven",
+            quote: "Het SAV-team belde uit zichzelf na een half jaar om alles na te kijken. Dat zegt veel over hoe ze nazorg invullen.",
+            author: "Mevr. Verhoeven",
+            project: "Poolhouse · 2022",
+            avatar: "https://www.untitledui.com/images/avatars/harriet-rojas?fm=webp&q=80",
+        },
+    ],
 ];
 
 const TestimonialsSection = () => {
     return (
         <section className="bg-[#F2F2F2] py-16 md:py-24" aria-labelledby="getuigenissen-titel">
-            <div className="mx-auto max-w-container px-4 md:px-8">
-                <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
+            <div className="mx-auto flex max-w-container flex-col items-center gap-12 px-4 md:gap-16 md:px-8">
+                <div className="flex max-w-3xl flex-col items-center gap-4 text-center md:gap-5">
                     <div className="flex gap-1">
                         {Array.from({ length: 5 }).map((_, i) => (
                             <Star01 key={i} className="size-5 fill-[#C19848] text-[#C19848]" />
@@ -533,33 +587,50 @@ const TestimonialsSection = () => {
                     </div>
                     <h2
                         id="getuigenissen-titel"
-                        className="mt-4 text-display-sm font-medium text-balance text-black md:text-display-md"
+                        className="text-display-sm font-medium text-balance text-black md:text-display-md"
                     >
                         Wat onze klanten zeggen.
                     </h2>
                 </div>
 
-                <ul className="mt-12 grid grid-cols-1 gap-6 md:mt-16 md:grid-cols-3 md:gap-8">
-                    {testimonials.map((t) => (
-                        <li
-                            key={t.author}
-                            className="flex flex-col gap-6 rounded-2xl bg-white p-6 md:p-8"
+                <div className="grid w-full grid-cols-1 gap-5 mask-b-from-[calc(100%-340px)] md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+                    {testimonialColumns.map((column, colIndex) => (
+                        <div
+                            key={colIndex}
+                            className={cx(
+                                "flex flex-col gap-5 lg:gap-8",
+                                colIndex === 0 && "lg:py-8",
+                                colIndex === 2 && "lg:pt-10",
+                            )}
                         >
-                            <div className="flex gap-1">
-                                {Array.from({ length: 5 }).map((_, i) => (
-                                    <Star01 key={i} className="size-4 fill-[#C19848] text-[#C19848]" />
-                                ))}
-                            </div>
-                            <blockquote className="flex-1 text-lg font-medium text-balance text-black md:text-xl">
-                                <p>&ldquo;{t.quote}&rdquo;</p>
-                            </blockquote>
-                            <footer className="text-sm text-black/70">
-                                <span className="font-semibold text-black">— {t.author}</span>
-                                <span className="ml-1">· {t.project}</span>
-                            </footer>
-                        </li>
+                            {column.map((t) => (
+                                <figure
+                                    key={t.id}
+                                    className="flex flex-col gap-6 rounded-2xl bg-white p-6 shadow-xs lg:gap-8 lg:p-8"
+                                >
+                                    <div className="flex gap-1">
+                                        {Array.from({ length: 5 }).map((_, i) => (
+                                            <Star01 key={i} className="size-4 fill-[#C19848] text-[#C19848]" />
+                                        ))}
+                                    </div>
+                                    <blockquote className="text-md text-black">{t.quote}</blockquote>
+                                    <figcaption className="mt-auto flex items-center gap-3">
+                                        <img
+                                            src={t.avatar}
+                                            alt=""
+                                            aria-hidden="true"
+                                            className="size-10 shrink-0 rounded-full object-cover"
+                                        />
+                                        <div className="flex flex-col">
+                                            <span className="text-sm font-semibold text-black">{t.author}</span>
+                                            <span className="text-sm text-black/70">{t.project}</span>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            ))}
+                        </div>
                     ))}
-                </ul>
+                </div>
             </div>
         </section>
     );
