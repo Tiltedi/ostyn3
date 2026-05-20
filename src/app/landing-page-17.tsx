@@ -8,7 +8,6 @@ import {
     Calendar,
     Check,
     ChevronDown,
-    HelpCircle,
     Mail01,
     MarkerPin01,
     Menu01,
@@ -1051,16 +1050,11 @@ const FaqSection = () => {
         <section id="faq" className="bg-white py-16 md:py-24" aria-labelledby="faq-titel">
             <div className="mx-auto grid max-w-container grid-cols-1 gap-12 px-4 md:px-8 lg:grid-cols-2 lg:gap-16">
                 <div className="flex flex-col">
-                    <span className="inline-flex items-center gap-2 self-start rounded-full bg-black px-4 py-1.5 text-sm font-semibold tracking-wider text-white uppercase">
-                        <HelpCircle className="size-4" aria-hidden="true" />
-                        FAQ
-                    </span>
                     <h2
                         id="faq-titel"
-                        className="mt-6 text-display-sm font-medium text-balance text-black md:text-display-md"
+                        className="text-display-sm font-medium text-balance text-black md:text-display-md"
                     >
                         Hebt u <strong className="font-extrabold">vragen</strong>?
-                        <br className="hidden md:inline" /> Wij hebben <strong className="font-extrabold">antwoorden</strong>.
                     </h2>
                     <p className="mt-4 max-w-md text-lg text-black md:mt-5">
                         Van eerste adviesgesprek tot oplevering — u wilt weten wat u kunt verwachten. Hier vindt u alles wat u over
@@ -1076,7 +1070,7 @@ const FaqSection = () => {
                     </div>
                 </div>
 
-                <ul className="flex flex-col border-t border-black/10 lg:mt-2">
+                <ul className="flex flex-col border-t border-black/10">
                     {faqItems.map((item) => (
                         <li key={item.q} className="border-b border-black/10">
                             <details className="group">
