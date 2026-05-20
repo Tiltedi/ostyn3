@@ -12,9 +12,9 @@ import {
     Mail01,
     MarkerPin01,
     Menu01,
+    MessageChatSquare,
     Phone,
     Send01,
-    Star01,
 } from "@untitledui/icons";
 import { Carousel } from "@/components/application/carousel/carousel-base";
 import { Button } from "@/components/base/buttons/button";
@@ -554,134 +554,181 @@ const ProcesSection = () => {
     );
 };
 
-type Testimonial = { id: string; quote: string; author: string; project: string; avatar: string };
-const testimonialColumns: Testimonial[][] = [
-    [
-        {
-            id: "t-devos",
-            quote: "Een dikke pluim aan al uw medewerkers! Naar aanleiding van de aankoop van een poolhouse bij uw bedrijf, zouden wij toch een dikke pluim willen geven aan al uw medewerkers!",
-            author: "Familie Devos",
-            project: "Poolhouse · 2024",
-            avatar: "https://www.untitledui.com/images/avatars/nikolas-gibbons?fm=webp&q=80",
-        },
-        {
-            id: "t-vandeputte",
-            quote: "De Afrormosia hardhout veroudert prachtig. Onze tuin oogt nu als een vakantieresort, en de buren komen het regelmatig bewonderen.",
-            author: "Familie Vandeputte",
-            project: "Poolhouse · 2023",
-            avatar: "https://www.untitledui.com/images/avatars/owen-garcia?fm=webp&q=80",
-        },
-        {
-            id: "t-janssens",
-            quote: "Drie maanden van schets tot oplevering. Indrukwekkend hoe strak de planning werd nageleefd.",
-            author: "Mr. Janssens",
-            project: "Veranda · 2024",
-            avatar: "https://www.untitledui.com/images/avatars/stefan-sears?fm=webp&q=80",
-        },
-    ],
-    [
-        {
-            id: "t-palsterman",
-            quote: "Ik heb zelden zulke bekwame, gedreven en vriendelijke vaklui aan het werk gezien!",
-            author: "Mr. Palsterman",
-            project: "Garage · 2023",
-            avatar: "https://www.untitledui.com/images/avatars/marco-kelly?fm=webp&q=80",
-        },
-        {
-            id: "t-vermeulen",
-            quote: "Het 3D-ontwerp gaf ons echt vertrouwen om de stap te zetten. Het resultaat ziet er nog mooier uit dan op de tekening.",
-            author: "Familie Vermeulen",
-            project: "Poolhouse · 2024",
-            avatar: "https://www.untitledui.com/images/avatars/ammar-foley?fm=webp&q=80",
-        },
-        {
-            id: "t-cornelis",
-            quote: "We dachten dat een poolhouse op maat onbetaalbaar zou zijn. Bij Ostyn klopte de offerte tot op de euro — geen verrassingen achteraf.",
-            author: "Familie Cornelis",
-            project: "Poolhouse · 2023",
-            avatar: "https://www.untitledui.com/images/avatars/mathilde-lewis?fm=webp&q=80",
-        },
-    ],
-    [
-        {
-            id: "t-lechantre",
-            quote: "We hadden gelijk om jullie bedrijf te vertrouwen.",
-            author: "Mr. & Mevr. Lechantre",
-            project: "Carport · 2023",
-            avatar: "https://www.untitledui.com/images/avatars/zaid-schwartz?fm=webp&q=80",
-        },
-        {
-            id: "t-debacker",
-            quote: "Eén aanspreekpunt van begin tot eind. Geen enkele keer moest ik bellen voor een update — zij belden mij.",
-            author: "Mevr. De Backer",
-            project: "Pergola · 2024",
-            avatar: "https://www.untitledui.com/images/avatars/florence-shaw?fm=webp&q=80",
-        },
-        {
-            id: "t-verhoeven",
-            quote: "Het SAV-team belde uit zichzelf na een half jaar om alles na te kijken. Dat zegt veel over hoe ze nazorg invullen.",
-            author: "Mevr. Verhoeven",
-            project: "Poolhouse · 2022",
-            avatar: "https://www.untitledui.com/images/avatars/harriet-rojas?fm=webp&q=80",
-        },
-    ],
+type Testimonial = {
+    id: string;
+    title: string;
+    quote: string;
+    author: string;
+    project: string;
+    avatar: string;
+};
+
+const testimonials: Testimonial[] = [
+    {
+        id: "t-devos",
+        title: "Een dikke pluim aan al uw medewerkers",
+        quote: "Naar aanleiding van de aankoop van een poolhouse bij uw bedrijf, zouden wij toch een dikke pluim willen geven aan al uw medewerkers!",
+        author: "Familie Devos",
+        project: "Poolhouse · 2024",
+        avatar: "https://www.untitledui.com/images/avatars/nikolas-gibbons?fm=webp&q=80",
+    },
+    {
+        id: "t-palsterman",
+        title: "Zelden zulke gedreven vaklui gezien",
+        quote: "Ik heb zelden zulke bekwame, gedreven en vriendelijke vaklui aan het werk gezien!",
+        author: "Mr. Palsterman",
+        project: "Garage · 2023",
+        avatar: "https://www.untitledui.com/images/avatars/marco-kelly?fm=webp&q=80",
+    },
+    {
+        id: "t-vandeputte",
+        title: "Onze tuin oogt nu als een vakantieresort",
+        quote: "De Afrormosia hardhout veroudert prachtig. Onze tuin oogt nu als een vakantieresort, en de buren komen het regelmatig bewonderen.",
+        author: "Familie Vandeputte",
+        project: "Poolhouse · 2023",
+        avatar: "https://www.untitledui.com/images/avatars/owen-garcia?fm=webp&q=80",
+    },
+    {
+        id: "t-vermeulen",
+        title: "Het 3D-ontwerp gaf ons vertrouwen",
+        quote: "Het 3D-ontwerp gaf ons echt vertrouwen om de stap te zetten. Het resultaat ziet er nog mooier uit dan op de tekening.",
+        author: "Familie Vermeulen",
+        project: "Poolhouse · 2024",
+        avatar: "https://www.untitledui.com/images/avatars/ammar-foley?fm=webp&q=80",
+    },
+    {
+        id: "t-debacker",
+        title: "Eén aanspreekpunt van begin tot eind",
+        quote: "Geen enkele keer moest ik bellen voor een update — zij belden mij. Dat scheelt rust en planning thuis enorm.",
+        author: "Mevr. De Backer",
+        project: "Pergola · 2024",
+        avatar: "https://www.untitledui.com/images/avatars/florence-shaw?fm=webp&q=80",
+    },
+    {
+        id: "t-lechantre",
+        title: "We hadden gelijk om hen te vertrouwen",
+        quote: "We hadden gelijk om jullie bedrijf te vertrouwen. Het werk werd correct, op tijd en met zorg afgewerkt.",
+        author: "Mr. & Mevr. Lechantre",
+        project: "Carport · 2023",
+        avatar: "https://www.untitledui.com/images/avatars/zaid-schwartz?fm=webp&q=80",
+    },
+    {
+        id: "t-cornelis",
+        title: "De offerte klopte tot op de euro",
+        quote: "We dachten dat een poolhouse op maat onbetaalbaar zou zijn. Bij Ostyn klopte de offerte tot op de euro — geen verrassingen achteraf.",
+        author: "Familie Cornelis",
+        project: "Poolhouse · 2023",
+        avatar: "https://www.untitledui.com/images/avatars/mathilde-lewis?fm=webp&q=80",
+    },
+    {
+        id: "t-janssens",
+        title: "Strakke planning, indrukwekkend nageleefd",
+        quote: "Drie maanden van schets tot oplevering. Indrukwekkend hoe strak de planning werd nageleefd, ook bij de afwerking.",
+        author: "Mr. Janssens",
+        project: "Veranda · 2024",
+        avatar: "https://www.untitledui.com/images/avatars/stefan-sears?fm=webp&q=80",
+    },
+    {
+        id: "t-verhoeven",
+        title: "Nazorg waar zij het initiatief nemen",
+        quote: "Het SAV-team belde uit zichzelf na een half jaar om alles na te kijken. Dat zegt veel over hoe ze nazorg invullen.",
+        author: "Mevr. Verhoeven",
+        project: "Poolhouse · 2022",
+        avatar: "https://www.untitledui.com/images/avatars/harriet-rojas?fm=webp&q=80",
+    },
 ];
+
+const testimonialRows: Testimonial[][] = [testimonials.slice(0, 5), testimonials.slice(5)];
+
+const QuoteGlyph = ({ className }: { className?: string }) => (
+    <svg aria-hidden="true" viewBox="0 0 32 24" className={className}>
+        <path
+            fill="currentColor"
+            d="M9.5 24c-2.6 0-4.7-.8-6.4-2.5C1.4 19.7.5 17.5.5 14.8c0-4.5 1.9-8.6 5.7-12.4L8 0l3.5 2.7c-1.6 1.6-3 3.1-4.1 4.5-1.1 1.4-1.7 2.7-1.8 3.9 1.3-.2 2.4 0 3.5.6 1 .6 1.8 1.4 2.3 2.4.6 1.1.9 2.2.9 3.4 0 1.9-.6 3.4-1.9 4.6S11.2 24 9.5 24Zm15 0c-2.6 0-4.7-.8-6.4-2.5-1.7-1.7-2.5-4-2.5-6.7 0-4.5 1.9-8.6 5.7-12.4L23 0l3.5 2.7c-1.6 1.6-3 3.1-4.1 4.5-1.1 1.4-1.7 2.7-1.8 3.9 1.3-.2 2.4 0 3.4.6 1.1.6 1.9 1.4 2.4 2.4.6 1.1.9 2.2.9 3.4 0 1.9-.6 3.4-1.9 4.6S26.3 24 24.5 24Z"
+        />
+    </svg>
+);
+
+const TestimonialCard = ({ t }: { t: Testimonial }) => (
+    <figure className="flex w-[280px] shrink-0 flex-col gap-5 rounded-2xl bg-white p-6 shadow-lg sm:w-[340px] md:w-[380px] md:p-7">
+        <h3 className="text-lg font-semibold text-balance text-black md:text-xl">{t.title}</h3>
+        <blockquote className="text-md text-black/70">{t.quote}</blockquote>
+        <figcaption className="mt-auto flex items-end justify-between gap-3 pt-2">
+            <div className="flex items-center gap-3">
+                <img
+                    src={t.avatar}
+                    alt=""
+                    aria-hidden="true"
+                    className="size-10 shrink-0 rounded-full object-cover ring-1 ring-black/5"
+                />
+                <div className="flex flex-col">
+                    <span className="text-sm font-semibold text-black">{t.author}</span>
+                    <span className="text-sm text-black/60">{t.project}</span>
+                </div>
+            </div>
+            <QuoteGlyph className="size-7 shrink-0 text-black/15" />
+        </figcaption>
+    </figure>
+);
+
+const MarqueeRow = ({ items, reverse }: { items: Testimonial[]; reverse?: boolean }) => (
+    <div className="group flex overflow-hidden">
+        {[0, 1].map((i) => (
+            <div
+                key={i}
+                aria-hidden={i === 1 ? "true" : undefined}
+                className={cx(
+                    "flex shrink-0 animate-marquee gap-5 pr-5 motion-reduce:animate-none md:gap-6 md:pr-6",
+                    "group-hover:[animation-play-state:paused]",
+                    reverse && "[animation-direction:reverse]",
+                )}
+            >
+                {items.map((t) => (
+                    <TestimonialCard key={`${i}-${t.id}`} t={t} />
+                ))}
+            </div>
+        ))}
+    </div>
+);
 
 const TestimonialsSection = () => {
     return (
-        <section className="bg-[#F2F2F2] py-16 md:py-24" aria-labelledby="getuigenissen-titel">
-            <div className="mx-auto flex max-w-container flex-col items-center gap-12 px-4 md:gap-16 md:px-8">
-                <div className="flex max-w-3xl flex-col items-center gap-4 text-center md:gap-5">
-                    <div className="flex gap-1">
-                        {Array.from({ length: 5 }).map((_, i) => (
-                            <Star01 key={i} className="size-5 fill-[#C19848] text-[#C19848]" />
-                        ))}
+        <section
+            className="bg-[#F2F2F2] px-4 py-4 md:px-6 md:py-6 lg:px-8 lg:py-8"
+            aria-labelledby="getuigenissen-titel"
+        >
+            <div className="relative isolate flex flex-col overflow-hidden rounded-3xl">
+                <img
+                    src="/hero.jpg"
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 -z-10 h-full w-full object-cover"
+                />
+                <div aria-hidden="true" className="absolute inset-0 -z-10 bg-black/55" />
+
+                <div className="px-6 pt-16 pb-12 md:px-12 md:pt-24 md:pb-16">
+                    <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
+                        <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-sm font-semibold tracking-wider text-black uppercase">
+                            <MessageChatSquare aria-hidden="true" className="size-4 text-[#C19848]" />
+                            Getuigenissen
+                        </span>
+                        <h2
+                            id="getuigenissen-titel"
+                            className="mt-6 text-display-sm font-medium text-balance text-white md:text-display-md"
+                        >
+                            Wat onze <strong className="font-extrabold">klanten</strong>
+                            <br className="hidden md:inline" /> over ons zeggen.
+                        </h2>
+                        <p className="mt-4 max-w-2xl text-lg text-white/85 md:mt-5 md:text-xl">
+                            Niets vertelt het verhaal beter dan de mensen voor wie we bouwden. Lees wat ze ons schreven na de
+                            oplevering.
+                        </p>
                     </div>
-                    <h2
-                        id="getuigenissen-titel"
-                        className="text-display-sm font-medium text-balance text-black md:text-display-md"
-                    >
-                        Wat onze klanten zeggen.
-                    </h2>
                 </div>
 
-                <div className="grid w-full grid-cols-1 gap-5 mask-b-from-[calc(100%-340px)] md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-                    {testimonialColumns.map((column, colIndex) => (
-                        <div
-                            key={colIndex}
-                            className={cx(
-                                "flex flex-col gap-5 lg:gap-8",
-                                colIndex === 0 && "lg:py-8",
-                                colIndex === 2 && "lg:pt-10",
-                            )}
-                        >
-                            {column.map((t) => (
-                                <figure
-                                    key={t.id}
-                                    className="flex flex-col gap-6 rounded-2xl bg-white p-6 shadow-xs lg:gap-8 lg:p-8"
-                                >
-                                    <div className="flex gap-1">
-                                        {Array.from({ length: 5 }).map((_, i) => (
-                                            <Star01 key={i} className="size-4 fill-[#C19848] text-[#C19848]" />
-                                        ))}
-                                    </div>
-                                    <blockquote className="text-md text-black">{t.quote}</blockquote>
-                                    <figcaption className="mt-auto flex items-center gap-3">
-                                        <img
-                                            src={t.avatar}
-                                            alt=""
-                                            aria-hidden="true"
-                                            className="size-10 shrink-0 rounded-full object-cover"
-                                        />
-                                        <div className="flex flex-col">
-                                            <span className="text-sm font-semibold text-black">{t.author}</span>
-                                            <span className="text-sm text-black/70">{t.project}</span>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                            ))}
-                        </div>
-                    ))}
+                <div className="flex flex-col gap-5 pb-16 md:gap-6 md:pb-24">
+                    <MarqueeRow items={testimonialRows[0]} />
+                    <MarqueeRow items={testimonialRows[1]} reverse />
                 </div>
             </div>
         </section>

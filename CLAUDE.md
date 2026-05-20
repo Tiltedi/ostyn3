@@ -111,7 +111,13 @@ Marketing landing page for **Ostyn**, a Belgian premium poolhouse company
    circles, F2F2F2 doorlooptijd callout
 7. `ShowroomSection` — gold (#C19848), black text, photo card right, white
    "3.000 m²" floating stat tile
-8. `TestimonialsSection` — F2F2F2, 3 quote cards with 5-star gold ratings
+8. `TestimonialsSection` — F2F2F2 outer with rounded full-bleed photo
+   inset (mirrors Hero pattern). Dark overlay carries a centered white
+   "Getuigenissen" pill + display headline + lead. Below, two
+   horizontally marqueeing rows of white testimonial cards (title +
+   quote + avatar/name/role + decorative quote glyph). Second row
+   reverses direction; both pause on hover and respect
+   `prefers-reduced-motion`.
 9. `NazorgSection` — white, 4 aftercare items with gold check circles
 10. `OfferteSection` — F2F2F2, two-column: copy/contact sidebar + contact
     form on white card
@@ -151,7 +157,9 @@ Marketing landing page for **Ostyn**, a Belgian premium poolhouse company
   Lechantre) + 6 plausible placeholders written in similar tone.
   All 9 avatars are UntitledUI PRO stock photos via
   `untitledui.com/images/avatars/*` — swap for real Ostyn
-  customer portraits when available.
+  customer portraits when available. Background reuses `public/hero.jpg`
+  with a heavy black/55 overlay — swap for a dedicated photo (or
+  evening/atmospheric Ostyn shot) when one is available.
 - `OfferteSection` form `action="#"` is a no-op — wire to the real
   endpoint when ready.
 
