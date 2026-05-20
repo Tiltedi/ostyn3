@@ -119,7 +119,7 @@ const HeroSection = () => {
                 />
 
                 <div className="flex flex-col gap-3 p-4 md:flex-row md:items-end md:justify-between md:gap-8 md:p-6">
-                    <div className="flex flex-col gap-6 rounded-3xl bg-black/55 p-6 backdrop-blur-2xl backdrop-saturate-150 md:max-w-xl md:gap-8 md:p-8">
+                    <div className="flex flex-col gap-6 rounded-3xl bg-white/15 p-6 ring-1 ring-white/20 backdrop-blur-2xl backdrop-saturate-150 ring-inset md:max-w-xl md:gap-8 md:p-8">
                         <div>
                             <p className="text-sm font-semibold tracking-[0.18em] text-[#C19848] uppercase md:text-md">
                                 expand your freedom
@@ -144,13 +144,13 @@ const HeroSection = () => {
                                     src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=400&fit=crop&q=80"
                                     alt=""
                                     aria-hidden="true"
-                                    className="size-12 shrink-0 rounded-2xl object-cover ring-1 ring-white/15 transition group-hover:scale-[1.05]"
+                                    className="size-12 shrink-0 rounded-2xl object-cover ring-1 ring-white/25 transition group-hover:scale-[1.05]"
                                 />
                                 <img
                                     src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?w=400&h=400&fit=crop&q=80"
                                     alt=""
                                     aria-hidden="true"
-                                    className="size-12 shrink-0 rounded-2xl object-cover ring-1 ring-white/15 transition group-hover:scale-[1.05]"
+                                    className="size-12 shrink-0 rounded-2xl object-cover ring-1 ring-white/25 transition group-hover:scale-[1.05]"
                                 />
                             </a>
                             <Button
@@ -164,30 +164,18 @@ const HeroSection = () => {
                         </div>
                     </div>
 
-                    <div className="flex flex-col gap-3 md:max-w-xs md:items-end">
-                        <div className="hidden gap-2 md:flex">
-                            <div className="rounded-2xl bg-black/40 px-5 py-3 backdrop-blur-2xl backdrop-saturate-150">
-                                <p className="text-display-xs font-extrabold text-white md:text-display-sm">33+</p>
-                                <p className="mt-0.5 text-xs text-white/70">jaar familiebedrijf</p>
-                            </div>
-                            <div className="rounded-2xl bg-black/40 px-5 py-3 backdrop-blur-2xl backdrop-saturate-150">
-                                <p className="text-display-xs font-extrabold text-white md:text-display-sm">3.000 m²</p>
-                                <p className="mt-0.5 text-xs text-white/70">eigen showroom</p>
-                            </div>
-                        </div>
-                        <div className="flex flex-col gap-4 rounded-3xl bg-black/40 p-6 backdrop-blur-2xl backdrop-saturate-150">
-                            <p className="text-md text-white/95">
-                                Eén team van ontwerp tot oplevering. Eén afspraak over de prijs. Eén partner die er ook na de plaatsing nog is.
-                            </p>
-                            <Button
-                                href="#offerte"
-                                size="md"
-                                iconTrailing={ArrowRight}
-                                className="self-start"
-                            >
-                                Vraag uw offerte
-                            </Button>
-                        </div>
+                    <div className="flex flex-col gap-4 rounded-3xl bg-white/15 p-6 ring-1 ring-white/20 backdrop-blur-2xl backdrop-saturate-150 ring-inset md:max-w-xs">
+                        <p className="text-md text-white/95">
+                            Eén team van ontwerp tot oplevering. Eén afspraak over de prijs. Eén partner die er ook na de plaatsing nog is.
+                        </p>
+                        <Button
+                            href="#offerte"
+                            size="md"
+                            iconTrailing={ArrowRight}
+                            className="self-start"
+                        >
+                            Vraag uw offerte
+                        </Button>
                     </div>
                 </div>
             </div>
