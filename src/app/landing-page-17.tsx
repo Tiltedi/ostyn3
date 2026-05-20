@@ -1,6 +1,6 @@
 "use client";
 
-import { type FC, type ReactNode } from "react";
+import { useEffect, useRef, type FC, type ReactNode } from "react";
 import {
     ArrowLeft,
     ArrowRight,
@@ -104,14 +104,51 @@ const OstynHeader = () => {
 };
 
 const HeroSection = () => {
+    const canvasRef = useRef<HTMLDivElement>(null);
+    const imgRef = useRef<HTMLImageElement>(null);
+
+    useEffect(() => {
+        const canvas = canvasRef.current;
+        const img = imgRef.current;
+        if (!canvas || !img) return;
+
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+        let ticking = false;
+        const update = () => {
+            const rect = canvas.getBoundingClientRect();
+            if (rect.bottom > 0 && rect.top < window.innerHeight) {
+                img.style.transform = `translate3d(0, ${(-rect.top * 0.3).toFixed(1)}px, 0)`;
+            }
+            ticking = false;
+        };
+        const onScroll = () => {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(update);
+        };
+
+        update();
+        window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("resize", onScroll);
+        return () => {
+            window.removeEventListener("scroll", onScroll);
+            window.removeEventListener("resize", onScroll);
+        };
+    }, []);
+
     return (
         <section className="p-4 md:p-6 lg:p-8" aria-labelledby="hero-titel">
-            <div className="relative isolate flex min-h-[calc(100svh-4rem-2rem)] flex-col justify-end overflow-hidden rounded-3xl md:min-h-[calc(100svh-5rem-3rem)] lg:min-h-[calc(100svh-5rem-4rem)]">
+            <div
+                ref={canvasRef}
+                className="relative isolate flex min-h-[calc(100svh-4rem-2rem)] flex-col justify-end overflow-hidden rounded-3xl md:min-h-[calc(100svh-5rem-3rem)] lg:min-h-[calc(100svh-5rem-4rem)]"
+            >
                 <img
+                    ref={imgRef}
                     src="/hero.jpg"
                     alt=""
                     aria-hidden="true"
-                    className="absolute inset-0 -z-10 size-full object-cover"
+                    className="absolute inset-x-0 -top-[20%] -z-10 h-[140%] w-full object-cover will-change-transform"
                 />
                 <div
                     aria-hidden="true"
