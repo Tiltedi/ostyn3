@@ -1015,7 +1015,7 @@ const OstynFooter = () => {
             <div className="mx-auto max-w-container px-4 md:px-8">
                 <div className="grid grid-cols-1 gap-12 border-t border-black/10 pt-12 md:grid-cols-2 lg:grid-cols-4">
                     <div className="flex flex-col gap-4">
-                        <img src="/logo-ostyn.png" alt="Ostyn" className="h-10 w-auto" />
+                        <img src="/logo-ostyn.png" alt="Ostyn" className="h-10 w-auto self-start" />
                         <p className="max-w-xs text-md text-black">
                             Specialist in tuinconstructies, woonuitbreidingen en poolhouses. Sinds 1992.
                         </p>
