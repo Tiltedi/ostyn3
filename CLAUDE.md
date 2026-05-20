@@ -98,19 +98,20 @@ Marketing landing page for **Ostyn**, a Belgian premium poolhouse company
    text, klantenportaal + nl) sits tight above the main row (h-16/20,
    logo + 7 product nav links + gold "afspraak maken" + hamburger).
    Logo and main-row nav are bottom-aligned via `items-end`.
-2. `HeroSection` — rounded full-bleed photo inset by `p-3/p-4`, with
-   two floating cards layered on the bottom via `backdrop-blur-md`:
-   left card (bg-black/85, ~3fr) carries the gold eyebrow + display
-   headline + project thumbnails + "Onze realisaties" pill; right
-   card (bg-black/55, ~2fr) carries two stat tiles (33+ jaar /
-   3.000m²) + lead paragraph + offerte CTA. Resentii-inspired.
+2. `HeroSection` — rounded full-bleed photo inset by `p-4/6/8`, with
+   parallax on the photo. A single floating card on the bottom-left
+   (bg-black/55, backdrop-blur-2xl) carries the gold eyebrow +
+   display headline + a CTA row: realisaties thumbnails + "Onze
+   realisaties" pill on the left, "Vraag uw offerte" main CTA pushed
+   to the right via `justify-between`.
 3. `PromiseSection` — F2F2F2, 3 outcome cards on white
 4. `RealisatiesSection` — white, 6-project carousel with gold tag chips
 5. `WaaromSection` — F2F2F2, 3 pillar cards on white
 6. `ProcesSection` — white, 5-step horizontal timeline with gold numbered
    circles, F2F2F2 doorlooptijd callout
-7. `ShowroomSection` — gold (#C19848), black text, photo card right, white
-   "3.000 m²" floating stat tile
+7. `ShowroomSection` — gold (#C19848), white text. Two-column layout:
+   copy (eyebrow + headline + lead + address/hours + CTAs) on the
+   left, square photo card on the right with parallax on the photo.
 8. `TestimonialsSection` — white outer (py-16/24) with rounded
    full-bleed photo inset (mirrors Hero pattern). A top-to-bottom
    gradient overlay (black/45 → black/15 → white) keeps the headline

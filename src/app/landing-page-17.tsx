@@ -40,47 +40,47 @@ const OstynLogo = ({ className }: { className?: string }) => (
 const OstynHeader = () => {
     return (
         <header className="sticky top-0 z-50 w-full border-b border-black/10 bg-white">
-            <div className="mx-auto flex h-16 max-w-container items-center justify-between gap-6 px-4 md:h-20 md:px-8">
-                <a href="#" aria-label="Ostyn — startpagina" className="flex items-center">
-                    <OstynLogo />
-                </a>
+            <div className="mx-auto max-w-container px-4 md:px-8">
+                <div className="hidden h-6 items-center justify-end gap-5 md:flex">
+                    <a
+                        href="#"
+                        className="flex items-center gap-1.5 text-xs text-black/60 outline-focus-ring transition hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2"
+                    >
+                        klantenportaal
+                        <ArrowUpRight className="size-3.5" aria-hidden="true" />
+                    </a>
+                    <button
+                        type="button"
+                        className="flex items-center gap-1 text-xs text-black/60 outline-focus-ring transition hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2"
+                    >
+                        nl
+                        <ChevronDown className="size-3.5" aria-hidden="true" />
+                    </button>
+                </div>
+                <div className="flex h-16 items-end justify-between gap-6 pb-3 md:h-14 md:pb-3">
+                    <a href="#" aria-label="Ostyn — startpagina" className="flex items-center">
+                        <OstynLogo />
+                    </a>
 
-                <nav aria-label="Hoofdnavigatie" className="hidden md:block">
-                    <ul className="flex items-center gap-6 lg:gap-8">
-                        {productNav.map((item) => (
-                            <li key={item.label}>
-                                <a
-                                    href={item.href}
-                                    className={cx(
-                                        "text-md text-black outline-focus-ring transition hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2",
-                                        item.active && "font-bold",
-                                    )}
-                                    aria-current={item.active ? "page" : undefined}
-                                >
-                                    {item.label}
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
+                    <nav aria-label="Hoofdnavigatie" className="hidden md:block">
+                        <ul className="flex items-center gap-6 lg:gap-8">
+                            {productNav.map((item) => (
+                                <li key={item.label}>
+                                    <a
+                                        href={item.href}
+                                        className={cx(
+                                            "text-md text-black outline-focus-ring transition hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2",
+                                            item.active && "font-bold",
+                                        )}
+                                        aria-current={item.active ? "page" : undefined}
+                                    >
+                                        {item.label}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
 
-                <div className="flex flex-col items-end gap-1">
-                    <div className="hidden items-center gap-5 md:flex">
-                        <a
-                            href="#"
-                            className="flex items-center gap-1.5 text-xs text-black/60 outline-focus-ring transition hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2"
-                        >
-                            klantenportaal
-                            <ArrowUpRight className="size-3.5" aria-hidden="true" />
-                        </a>
-                        <button
-                            type="button"
-                            className="flex items-center gap-1 text-xs text-black/60 outline-focus-ring transition hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2"
-                        >
-                            nl
-                            <ChevronDown className="size-3.5" aria-hidden="true" />
-                        </button>
-                    </div>
                     <div className="flex items-center gap-5">
                         <a
                             href="#offerte"
@@ -170,35 +170,37 @@ const HeroSection = () => {
                             </h1>
                         </div>
 
-                        <div className="flex flex-wrap items-center gap-3">
+                        <div className="flex flex-wrap items-center justify-between gap-3">
+                            <div className="flex flex-wrap items-center gap-3">
+                                <a
+                                    href="#realisaties"
+                                    aria-label="Bekijk onze realisaties"
+                                    className="group flex shrink-0 gap-2 outline-focus-ring focus-visible:outline-2 focus-visible:outline-offset-4"
+                                >
+                                    <img
+                                        src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=400&fit=crop&q=80"
+                                        alt=""
+                                        aria-hidden="true"
+                                        className="size-12 shrink-0 rounded-2xl object-cover ring-1 ring-white/15 transition group-hover:scale-[1.05]"
+                                    />
+                                    <img
+                                        src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?w=400&h=400&fit=crop&q=80"
+                                        alt=""
+                                        aria-hidden="true"
+                                        className="size-12 shrink-0 rounded-2xl object-cover ring-1 ring-white/15 transition group-hover:scale-[1.05]"
+                                    />
+                                </a>
+                                <Button
+                                    href="#realisaties"
+                                    size="md"
+                                    iconTrailing={ArrowUpRight}
+                                    className="!bg-white !text-black hover:!bg-white/90 *:data-icon:!text-black/60 hover:*:data-icon:!text-black/80"
+                                >
+                                    Onze realisaties
+                                </Button>
+                            </div>
                             <Button href="#offerte" size="md" iconTrailing={ArrowRight}>
                                 Vraag uw offerte
-                            </Button>
-                            <a
-                                href="#realisaties"
-                                aria-label="Bekijk onze realisaties"
-                                className="group flex shrink-0 gap-2 outline-focus-ring focus-visible:outline-2 focus-visible:outline-offset-4"
-                            >
-                                <img
-                                    src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=400&fit=crop&q=80"
-                                    alt=""
-                                    aria-hidden="true"
-                                    className="size-12 shrink-0 rounded-2xl object-cover ring-1 ring-white/15 transition group-hover:scale-[1.05]"
-                                />
-                                <img
-                                    src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?w=400&h=400&fit=crop&q=80"
-                                    alt=""
-                                    aria-hidden="true"
-                                    className="size-12 shrink-0 rounded-2xl object-cover ring-1 ring-white/15 transition group-hover:scale-[1.05]"
-                                />
-                            </a>
-                            <Button
-                                href="#realisaties"
-                                size="md"
-                                iconTrailing={ArrowUpRight}
-                                className="!bg-white !text-black hover:!bg-white/90"
-                            >
-                                Onze realisaties
                             </Button>
                         </div>
                     </div>
@@ -790,6 +792,39 @@ const NazorgSection = () => {
 };
 
 const ShowroomSection = () => {
+    const canvasRef = useRef<HTMLDivElement>(null);
+    const imgRef = useRef<HTMLImageElement>(null);
+
+    useEffect(() => {
+        const canvas = canvasRef.current;
+        const img = imgRef.current;
+        if (!canvas || !img) return;
+
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+        let ticking = false;
+        const update = () => {
+            const rect = canvas.getBoundingClientRect();
+            if (rect.bottom > 0 && rect.top < window.innerHeight) {
+                img.style.transform = `translate3d(0, ${(-rect.top * 0.15).toFixed(1)}px, 0)`;
+            }
+            ticking = false;
+        };
+        const onScroll = () => {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(update);
+        };
+
+        update();
+        window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("resize", onScroll);
+        return () => {
+            window.removeEventListener("scroll", onScroll);
+            window.removeEventListener("resize", onScroll);
+        };
+    }, []);
+
     return (
         <section id="showroom" className="bg-[#C19848] py-16 md:py-24" aria-labelledby="showroom-titel">
             <div className="mx-auto grid max-w-container grid-cols-1 gap-12 px-4 md:px-8 lg:grid-cols-2 lg:items-center lg:gap-16">
@@ -822,18 +857,13 @@ const ShowroomSection = () => {
                     </div>
                 </div>
 
-                <div className="relative">
-                    <div className="overflow-hidden rounded-2xl">
-                        <img
-                            src="/showroom.jpg"
-                            alt="Adviesgesprek in de Ostyn showroom in Dottenijs"
-                            className="aspect-square w-full object-cover"
-                        />
-                    </div>
-                    <div className="absolute -right-4 -bottom-4 hidden flex-col gap-1 rounded-2xl bg-white px-6 py-4 shadow-2xl md:flex">
-                        <p className="text-display-xs font-semibold text-black">3.000 m²</p>
-                        <p className="text-sm font-medium text-black/70">overdekte showroom</p>
-                    </div>
+                <div ref={canvasRef} className="relative aspect-square overflow-hidden rounded-2xl">
+                    <img
+                        ref={imgRef}
+                        src="/showroom.jpg"
+                        alt="Adviesgesprek in de Ostyn showroom in Dottenijs"
+                        className="absolute inset-x-0 -top-[20%] h-[140%] w-full object-cover will-change-transform"
+                    />
                 </div>
             </div>
         </section>
