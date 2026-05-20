@@ -1,3 +1,3 @@
-import LandingPage17 from "./landing-page-17";
+import LandingPageTuinhuis from "./landing-page-tuinhuis";
 
-export default LandingPage17;
+export default LandingPageTuinhuis;

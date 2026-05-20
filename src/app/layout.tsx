@@ -12,9 +12,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-    title: "Ostyn — Poolhouses op maat. Eigen atelier, klaar in 3 tot 6 maanden.",
+    title: "Ostyn — Tuinhuis op maat. Eigen atelier, klaar in 3 tot 6 maanden.",
     description:
-        "Premium poolhouses op maat. Ontworpen, in eigen atelier gebouwd, en geplaatst door onze eigen teams. Eén partner van A tot Z. Sinds 1992.",
+        "Premium tuinhuizen op maat. Ontworpen, in eigen atelier gebouwd, en geplaatst door onze eigen teams. Eén partner van A tot Z. Sinds 1992.",
 };
 
 export const viewport: Viewport = {
