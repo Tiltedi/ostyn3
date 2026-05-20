@@ -119,7 +119,7 @@ const HeroSection = () => {
                 />
 
                 <div className="flex flex-col gap-3 p-4 md:flex-row md:items-end md:justify-between md:gap-8 md:p-6">
-                    <div className="flex flex-col gap-6 rounded-3xl bg-white/15 p-6 ring-1 ring-white/20 backdrop-blur-2xl backdrop-saturate-150 ring-inset md:max-w-xl md:gap-8 md:p-8">
+                    <div className="flex flex-col gap-6 rounded-3xl bg-white/20 p-6 ring-1 ring-white/25 backdrop-blur-2xl backdrop-saturate-150 ring-inset md:max-w-xl md:gap-8 md:p-8">
                         <div>
                             <p className="text-sm font-semibold tracking-[0.18em] text-[#C19848] uppercase md:text-md">
                                 expand your freedom
@@ -164,7 +164,7 @@ const HeroSection = () => {
                         </div>
                     </div>
 
-                    <div className="flex flex-col gap-4 rounded-3xl bg-white/15 p-6 ring-1 ring-white/20 backdrop-blur-2xl backdrop-saturate-150 ring-inset md:max-w-xs">
+                    <div className="flex flex-col gap-4 rounded-3xl bg-white/20 p-6 ring-1 ring-white/25 backdrop-blur-2xl backdrop-saturate-150 ring-inset md:max-w-xs">
                         <p className="text-md text-white/95">
                             Eén team van ontwerp tot oplevering. Eén afspraak over de prijs. Eén partner die er ook na de plaatsing nog is.
                         </p>
