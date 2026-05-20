@@ -693,7 +693,7 @@ const MarqueeRow = ({ items, reverse }: { items: Testimonial[]; reverse?: boolea
 const TestimonialsSection = () => {
     return (
         <section
-            className="bg-[#F2F2F2] px-6 py-8 md:px-12 md:py-10 lg:px-16"
+            className="bg-white px-6 py-16 md:px-12 md:py-24 lg:px-16"
             aria-labelledby="getuigenissen-titel"
         >
             <div className="relative isolate flex flex-col overflow-hidden rounded-3xl">
@@ -703,7 +703,10 @@ const TestimonialsSection = () => {
                     aria-hidden="true"
                     className="absolute inset-0 -z-10 h-full w-full object-cover"
                 />
-                <div aria-hidden="true" className="absolute inset-0 -z-10 bg-black/35" />
+                <div
+                    aria-hidden="true"
+                    className="absolute inset-0 -z-10 bg-gradient-to-b from-black/45 via-black/15 to-white"
+                />
 
                 <div className="px-6 pt-16 pb-12 md:px-12 md:pt-24 md:pb-16">
                     <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
@@ -717,10 +720,6 @@ const TestimonialsSection = () => {
                             Wat onze <strong className="font-extrabold">klanten</strong>
                             <br className="hidden md:inline" /> over ons zeggen.
                         </h2>
-                        <p className="mt-4 max-w-2xl text-lg text-white/85 md:mt-5 md:text-xl">
-                            Niets vertelt het verhaal beter dan de mensen voor wie we bouwden. Lees wat ze ons schreven na de
-                            oplevering.
-                        </p>
                     </div>
                 </div>
 

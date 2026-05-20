@@ -111,12 +111,15 @@ Marketing landing page for **Ostyn**, a Belgian premium poolhouse company
    circles, F2F2F2 doorlooptijd callout
 7. `ShowroomSection` — gold (#C19848), black text, photo card right, white
    "3.000 m²" floating stat tile
-8. `TestimonialsSection` — F2F2F2 outer with rounded full-bleed photo
-   inset (mirrors Hero pattern). Dark overlay carries a centered white
-   "Getuigenissen" pill + display headline + lead. Below, two
-   horizontally marqueeing rows of white testimonial cards (title +
-   quote + avatar/name/role + decorative quote glyph). Second row
-   reverses direction; both pause on hover and respect
+8. `TestimonialsSection` — white outer (py-16/24) with rounded
+   full-bleed photo inset (mirrors Hero pattern). A top-to-bottom
+   gradient overlay (black/45 → black/15 → white) keeps the headline
+   legible at the top and fades the photo into the white section bg
+   at the bottom for a seamless handoff. Carries a centered white
+   "Getuigenissen" pill + display headline. Below, two horizontally
+   marqueeing rows of white testimonial cards (title + quote +
+   avatar/name/role + decorative quote glyph). Second row reverses
+   direction; both pause on hover and respect
    `prefers-reduced-motion`.
 9. `NazorgSection` — white, 4 aftercare items with gold check circles
 10. `OfferteSection` — F2F2F2, two-column: copy/contact sidebar + contact
@@ -159,7 +162,8 @@ Marketing landing page for **Ostyn**, a Belgian premium poolhouse company
   `untitledui.com/images/avatars/*` — swap for real Ostyn
   customer portraits when available. Background photo: served from
   `public/testimonials.jpg` (Ostyn-supplied poolhouse + reflecting
-  pool shot) with a black/35 overlay.
+  pool shot) with a vertical gradient overlay
+  (black/45 → black/15 → white).
 - `OfferteSection` form `action="#"` is a no-op — wire to the real
   endpoint when ready.
 
