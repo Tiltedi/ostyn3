@@ -33,7 +33,11 @@ const productNav = [
 ];
 
 const OstynLogo = ({ className }: { className?: string }) => (
-    <img src="/logo-ostyn.png" alt="Ostyn" className={cx("h-11 w-auto md:h-14", className)} />
+    <img
+        src="/logo-ostyn.png"
+        alt="Ostyn"
+        className={cx("h-11 w-auto transition-[height] duration-300 ease-out md:h-14", className)}
+    />
 );
 
 const OstynHeader = () => {
@@ -75,7 +79,7 @@ const OstynHeader = () => {
                 </div>
                 <div className="flex h-16 items-end justify-between gap-6 pb-3 md:h-14 md:pb-3">
                     <a href="#" aria-label="Ostyn — startpagina" className="flex items-center">
-                        <OstynLogo />
+                        <OstynLogo className={scrolled ? "md:!h-9" : undefined} />
                     </a>
 
                     <nav aria-label="Hoofdnavigatie" className="hidden md:block">
