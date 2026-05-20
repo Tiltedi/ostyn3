@@ -157,9 +157,9 @@ Marketing landing page for **Ostyn**, a Belgian premium poolhouse company
   Lechantre) + 6 plausible placeholders written in similar tone.
   All 9 avatars are UntitledUI PRO stock photos via
   `untitledui.com/images/avatars/*` — swap for real Ostyn
-  customer portraits when available. Background reuses `public/hero.jpg`
-  with a heavy black/55 overlay — swap for a dedicated photo (or
-  evening/atmospheric Ostyn shot) when one is available.
+  customer portraits when available. Background photo: served from
+  `public/testimonials.jpg` (Ostyn-supplied poolhouse + reflecting
+  pool shot) with a black/35 overlay.
 - `OfferteSection` form `action="#"` is a no-op — wire to the real
   endpoint when ready.
 

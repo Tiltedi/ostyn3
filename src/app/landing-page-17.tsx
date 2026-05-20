@@ -12,7 +12,6 @@ import {
     Mail01,
     MarkerPin01,
     Menu01,
-    MessageChatSquare,
     Phone,
     Send01,
 } from "@untitledui/icons";
@@ -694,22 +693,21 @@ const MarqueeRow = ({ items, reverse }: { items: Testimonial[]; reverse?: boolea
 const TestimonialsSection = () => {
     return (
         <section
-            className="bg-[#F2F2F2] px-4 py-4 md:px-6 md:py-6 lg:px-8 lg:py-8"
+            className="bg-[#F2F2F2] px-6 py-8 md:px-12 md:py-10 lg:px-16"
             aria-labelledby="getuigenissen-titel"
         >
             <div className="relative isolate flex flex-col overflow-hidden rounded-3xl">
                 <img
-                    src="/hero.jpg"
+                    src="/testimonials.jpg"
                     alt=""
                     aria-hidden="true"
                     className="absolute inset-0 -z-10 h-full w-full object-cover"
                 />
-                <div aria-hidden="true" className="absolute inset-0 -z-10 bg-black/55" />
+                <div aria-hidden="true" className="absolute inset-0 -z-10 bg-black/35" />
 
                 <div className="px-6 pt-16 pb-12 md:px-12 md:pt-24 md:pb-16">
                     <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-                        <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-sm font-semibold tracking-wider text-black uppercase">
-                            <MessageChatSquare aria-hidden="true" className="size-4 text-[#C19848]" />
+                        <span className="rounded-full bg-white px-4 py-1.5 text-sm font-semibold tracking-wider text-black uppercase">
                             Getuigenissen
                         </span>
                         <h2
