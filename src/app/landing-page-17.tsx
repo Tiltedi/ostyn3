@@ -8,10 +8,12 @@ import {
     Calendar,
     Check,
     ChevronDown,
+    HelpCircle,
     Mail01,
     MarkerPin01,
     Menu01,
     Phone,
+    Plus,
     Send01,
 } from "@untitledui/icons";
 import { Carousel } from "@/components/application/carousel/carousel-base";
@@ -983,6 +985,118 @@ const OfferteSection = () => {
     );
 };
 
+type FaqItem = { q: string; a: ReactNode };
+const faqItems: FaqItem[] = [
+    {
+        q: "Hoe lang duurt een project van eerste gesprek tot oplevering?",
+        a: (
+            <>
+                Reken gemiddeld op <strong className="font-semibold">3 tot 6 maanden</strong>, afhankelijk van complexiteit en
+                planning. Na goedkeuring van het 3D-ontwerp en de definitieve offerte volgt 8 tot 12 weken productie in eigen
+                atelier en plaatsing door onze eigen teams.
+            </>
+        ),
+    },
+    {
+        q: "Hoe verloopt het ontwerpproces?",
+        a: (
+            <>
+                Adviesgesprek → 3D-ontwerp → gedetailleerde offerte → productie in eigen atelier → plaatsing → oplevering. U ziet
+                uw poolhouse in 3D vóór u tekent en de afgesproken prijs houdt stand —{" "}
+                <strong className="font-semibold">geen meerwerk halverwege</strong>.
+            </>
+        ),
+    },
+    {
+        q: "Wat onderscheidt Ostyn van andere poolhousebouwers?",
+        a: (
+            <>
+                Eigen ontwerp, eigen atelier in Dottenijs, eigen plaatsingsteams en een intern SAV-team. Geen onderaanneming,
+                geen tussenpartij. <strong className="font-semibold">Eén keten van verantwoordelijkheid</strong> — ook jaren na de
+                oplevering.
+            </>
+        ),
+    },
+    {
+        q: "Komen jullie aan huis voor een adviesgesprek?",
+        a: (
+            <>
+                Ja. We komen graag bij u langs om uw woning, terrein en pool te zien. Een bezoek aan onze showroom in Dottenijs
+                kan natuurlijk ook — 3.000 m² overdekt, zeven dagen op zeven open.
+            </>
+        ),
+    },
+    {
+        q: "In welke regio's zijn jullie actief?",
+        a: (
+            <>
+                Heel <strong className="font-semibold">België</strong> en <strong className="font-semibold">Noord-Frankrijk</strong>.
+                Onze plaatsingsploegen vertrekken vanuit Dottenijs en zijn dagelijks op de baan.
+            </>
+        ),
+    },
+    {
+        q: "Welke types projecten realiseren jullie?",
+        a: (
+            <>
+                Poolhouses, tuinhuizen, carports, garages, veranda&apos;s, pergola&apos;s en aanverwante tuinconstructies. Telkens
+                op maat ontworpen en in eigen atelier gebouwd.
+            </>
+        ),
+    },
+];
+
+const FaqSection = () => {
+    return (
+        <section id="faq" className="bg-white py-16 md:py-24" aria-labelledby="faq-titel">
+            <div className="mx-auto grid max-w-container grid-cols-1 gap-12 px-4 md:px-8 lg:grid-cols-2 lg:gap-16">
+                <div className="flex flex-col">
+                    <span className="inline-flex items-center gap-2 self-start rounded-full bg-black px-4 py-1.5 text-sm font-semibold tracking-wider text-white uppercase">
+                        <HelpCircle className="size-4" aria-hidden="true" />
+                        FAQ
+                    </span>
+                    <h2
+                        id="faq-titel"
+                        className="mt-6 text-display-sm font-medium text-balance text-black md:text-display-md"
+                    >
+                        Hebt u <strong className="font-extrabold">vragen</strong>?
+                        <br className="hidden md:inline" /> Wij hebben <strong className="font-extrabold">antwoorden</strong>.
+                    </h2>
+                    <p className="mt-4 max-w-md text-lg text-black md:mt-5">
+                        Van eerste adviesgesprek tot oplevering — u wilt weten wat u kunt verwachten. Hier vindt u alles wat u over
+                        werken met Ostyn moet weten.
+                    </p>
+
+                    <div className="mt-10 aspect-[4/5] w-full max-w-[280px] overflow-hidden rounded-2xl bg-[#F2F2F2]">
+                        <img
+                            src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=600&h=750&fit=crop&q=80"
+                            alt="Adviseur Ostyn"
+                            className="size-full object-cover"
+                        />
+                    </div>
+                </div>
+
+                <ul className="flex flex-col border-t border-black/10 lg:mt-2">
+                    {faqItems.map((item) => (
+                        <li key={item.q} className="border-b border-black/10">
+                            <details className="group">
+                                <summary className="flex cursor-pointer list-none items-center gap-4 py-6 outline-focus-ring focus-visible:outline-2 focus-visible:outline-offset-2 [&::-webkit-details-marker]:hidden">
+                                    <Plus
+                                        aria-hidden="true"
+                                        className="size-5 shrink-0 text-black transition-transform duration-200 ease-out group-open:rotate-45"
+                                    />
+                                    <span className="text-lg font-semibold text-black md:text-xl">{item.q}</span>
+                                </summary>
+                                <div className="pb-6 pl-9 text-md text-black/70">{item.a}</div>
+                            </details>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </section>
+    );
+};
+
 const footerCols = [
     {
         label: "Showroom",
@@ -1085,6 +1199,7 @@ const LandingPage17 = () => {
                 <TestimonialsSection />
                 <NazorgSection />
                 <OfferteSection />
+                <FaqSection />
             </main>
             <OstynFooter />
         </div>

@@ -131,7 +131,11 @@ Marketing landing page for **Ostyn**, a Belgian premium poolhouse company
 9. `NazorgSection` — white, 4 aftercare items with gold check circles
 10. `OfferteSection` — F2F2F2, two-column: copy/contact sidebar + contact
     form on white card
-11. `OstynFooter` — white with top border, logo + 3 link columns, copyright
+11. `FaqSection` — white, two-column: left has a black FAQ pill
+    (HelpCircle icon), display headline, lead and a portrait photo;
+    right is a divider-separated list of native `<details>` accordions.
+    The Plus icon rotates 45° → X when open.
+12. `OstynFooter` — white with top border, logo + 3 link columns, copyright
 
 ## Gotchas (don't re-discover these the hard way)
 
@@ -173,6 +177,8 @@ Marketing landing page for **Ostyn**, a Belgian premium poolhouse company
   (black/45 → black/15 → white).
 - `OfferteSection` form `action="#"` is a no-op — wire to the real
   endpoint when ready.
+- `FaqSection` portrait photo: Unsplash placeholder of a professional —
+  swap for a real Ostyn family/advisor portrait when available.
 
 ## Dev / build / deploy
 
