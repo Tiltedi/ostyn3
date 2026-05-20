@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, type FC, type ReactNode } from "react";
+import { useEffect, useRef, useState, type FC, type ReactNode } from "react";
 import {
     ArrowLeft,
     ArrowRight,
@@ -8,7 +8,6 @@ import {
     Calendar,
     Check,
     ChevronDown,
-    Clock,
     Mail01,
     MarkerPin01,
     Menu01,
@@ -38,12 +37,28 @@ const OstynLogo = ({ className }: { className?: string }) => (
 );
 
 const OstynHeader = () => {
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 80);
+        onScroll();
+        window.addEventListener("scroll", onScroll, { passive: true });
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+
     return (
         <header className="sticky top-0 z-50 w-full border-b border-black/10 bg-white">
             <div className="mx-auto max-w-container px-4 md:px-8">
-                <div className="hidden h-6 items-center justify-end gap-5 md:flex">
+                <div
+                    aria-hidden={scrolled || undefined}
+                    className={cx(
+                        "hidden overflow-hidden transition-[height,opacity] duration-300 ease-out md:flex md:items-center md:justify-end md:gap-5",
+                        scrolled ? "md:h-0 md:opacity-0" : "md:h-6 md:opacity-100",
+                    )}
+                >
                     <a
                         href="#"
+                        tabIndex={scrolled ? -1 : undefined}
                         className="flex items-center gap-1.5 text-xs text-black/60 outline-focus-ring transition hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2"
                     >
                         klantenportaal
@@ -51,6 +66,7 @@ const OstynHeader = () => {
                     </a>
                     <button
                         type="button"
+                        tabIndex={scrolled ? -1 : undefined}
                         className="flex items-center gap-1 text-xs text-black/60 outline-focus-ring transition hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2"
                     >
                         nl
@@ -165,40 +181,37 @@ const HeroSection = () => {
                                 className="mt-3 text-display-sm font-medium text-balance text-white md:text-display-md"
                             >
                                 Een <strong className="font-extrabold">poolhouse op maat</strong>. In{" "}
-                                <strong className="font-extrabold">eigen atelier</strong> gebouwd, klaar in{" "}
-                                <strong className="font-extrabold">3 tot 6 maanden</strong>.
+                                <strong className="font-extrabold">eigen atelier</strong> gebouwd.
                             </h1>
                         </div>
 
-                        <div className="flex flex-wrap items-center justify-between gap-3">
-                            <div className="flex flex-wrap items-center gap-3">
-                                <a
-                                    href="#realisaties"
-                                    aria-label="Bekijk onze realisaties"
-                                    className="group flex shrink-0 gap-2 outline-focus-ring focus-visible:outline-2 focus-visible:outline-offset-4"
-                                >
-                                    <img
-                                        src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=400&fit=crop&q=80"
-                                        alt=""
-                                        aria-hidden="true"
-                                        className="size-12 shrink-0 rounded-2xl object-cover ring-1 ring-white/15 transition group-hover:scale-[1.05]"
-                                    />
-                                    <img
-                                        src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?w=400&h=400&fit=crop&q=80"
-                                        alt=""
-                                        aria-hidden="true"
-                                        className="size-12 shrink-0 rounded-2xl object-cover ring-1 ring-white/15 transition group-hover:scale-[1.05]"
-                                    />
-                                </a>
-                                <Button
-                                    href="#realisaties"
-                                    size="md"
-                                    iconTrailing={ArrowUpRight}
-                                    className="!bg-white !text-black hover:!bg-white/90 *:data-icon:!text-black/60 hover:*:data-icon:!text-black/80"
-                                >
-                                    Onze realisaties
-                                </Button>
-                            </div>
+                        <div className="flex flex-wrap items-center gap-3">
+                            <a
+                                href="#realisaties"
+                                aria-label="Bekijk onze realisaties"
+                                className="group flex shrink-0 gap-2 outline-focus-ring focus-visible:outline-2 focus-visible:outline-offset-4"
+                            >
+                                <img
+                                    src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=400&fit=crop&q=80"
+                                    alt=""
+                                    aria-hidden="true"
+                                    className="size-12 shrink-0 rounded-2xl object-cover ring-1 ring-white/15 transition group-hover:scale-[1.05]"
+                                />
+                                <img
+                                    src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?w=400&h=400&fit=crop&q=80"
+                                    alt=""
+                                    aria-hidden="true"
+                                    className="size-12 shrink-0 rounded-2xl object-cover ring-1 ring-white/15 transition group-hover:scale-[1.05]"
+                                />
+                            </a>
+                            <Button
+                                href="#realisaties"
+                                size="md"
+                                iconTrailing={ArrowUpRight}
+                                className="!bg-white !text-black hover:!bg-white/90 *:data-icon:!text-black/60 hover:*:data-icon:!text-black/80"
+                            >
+                                Onze realisaties
+                            </Button>
                             <Button href="#offerte" size="md" iconTrailing={ArrowRight}>
                                 Vraag uw offerte
                             </Button>
@@ -519,37 +532,25 @@ const ProcesSection = () => {
                     </p>
                 </div>
 
-                <ol className="mt-12 grid grid-cols-1 gap-8 md:mt-16 lg:grid-cols-5 lg:gap-6">
-                    {steps.map((step, index) => (
-                        <li key={step.num} className="relative flex flex-col gap-4">
-                            <div className="flex items-center gap-4 lg:flex-col lg:items-start">
-                                <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#C19848] text-md font-semibold text-white md:size-14 md:text-lg">
-                                    {step.num}
-                                </span>
-                                {index < steps.length - 1 && (
-                                    <span aria-hidden="true" className="hidden h-px flex-1 bg-black/15 lg:block" />
-                                )}
-                            </div>
+                <ol className="mt-12 grid grid-cols-1 gap-10 md:mt-16 md:gap-12 lg:grid-cols-5 lg:gap-8">
+                    {steps.map((step) => (
+                        <li key={step.num} className="flex flex-col gap-4 lg:gap-6">
+                            <span
+                                aria-hidden="true"
+                                className="text-display-lg font-bold leading-[0.85] text-transparent [-webkit-text-stroke:1.5px_#C19848] md:text-display-xl"
+                            >
+                                {step.num}
+                            </span>
                             <div>
-                                <h3 className="text-xl font-semibold text-black md:text-display-xs">{step.title}</h3>
+                                <h3 className="text-xl font-semibold text-black md:text-display-xs">
+                                    <span className="sr-only">Stap {step.num}: </span>
+                                    {step.title}
+                                </h3>
                                 <p className="mt-2 text-md text-black">{step.body}</p>
                             </div>
                         </li>
                     ))}
                 </ol>
-
-                <div className="mt-12 flex flex-col gap-4 rounded-2xl bg-[#F2F2F2] p-6 md:flex-row md:items-center md:justify-between md:p-8">
-                    <div className="flex items-start gap-4">
-                        <Clock className="mt-0.5 size-6 shrink-0 text-[#C19848]" />
-                        <p className="text-md text-black">
-                            <strong className="font-semibold">Typische doorlooptijd: 3 tot 6 maanden</strong> van getekende offerte tot
-                            oplevering. We bevestigen de planning bij de offerte; per project kan dit licht variëren.
-                        </p>
-                    </div>
-                    <Button href="#offerte" size="lg" iconTrailing={ArrowRight} className="shrink-0">
-                        Vraag uw offerte aan
-                    </Button>
-                </div>
             </div>
         </section>
     );
