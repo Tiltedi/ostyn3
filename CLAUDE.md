@@ -162,8 +162,11 @@ npm run dev     # localhost:3000
 npm run build   # production (Turbopack)
 ```
 
-Vercel auto-deploys every push to `claude/ready-3BJ0B`. After a push, give
-it ~60–90 seconds and reload https://ostyn-2.vercel.app.
+Vercel auto-deploys every branch. Pushes to `claude/ready-3BJ0B`
+land on production at https://ostyn-2.vercel.app; pushes to any
+other branch get their own preview URL
+(`ostyn-2-git-<branch>-luca-tiltedicoms-projects.vercel.app`).
+Give it ~60–90 seconds after a push before reloading.
 
 ## Working with UntitledUI from MCP
 
@@ -183,11 +186,13 @@ component from scratch.
 
 ## Workflow notes for new sessions
 
-- **Branch**: work directly on `claude/ready-3BJ0B` (production). The
-  user wants every change to land on prod immediately — no feature
-  branches, no merge step. If a session is auto-pinned to a different
-  branch in the harness instructions, switch to `claude/ready-3BJ0B`
-  and continue there.
+- **Branch**: stay on the branch the harness pins this session to —
+  do NOT switch to `claude/ready-3BJ0B`. Each session is its own
+  feature branch; Vercel auto-deploys it to a preview URL
+  (`ostyn-2-git-<branch>-...vercel.app`) and the user reviews
+  there. Only merge to `claude/ready-3BJ0B` (production) when the
+  user explicitly approves it. Never push to `claude/ready-3BJ0B`
+  on your own.
 - **One file**: keep adding sections to `src/app/landing-page-17.tsx`.
   When you add one, slot the component into the `LandingPage17` render
   tree at the bottom.
